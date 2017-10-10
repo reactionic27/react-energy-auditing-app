@@ -1,0 +1,73 @@
+<% include partials/head.html %>
+<body>
+<div id="primary-container">
+    <div class="container-fluid signin-container">
+      <div class="signup-form row" style="margin-bottom: 40px">
+        <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2 col-lg-4 col-lg-offset-4">
+          <!--  Hiding the flash alert here because we're explaining it in the UI-->
+          <div style="display: none">
+            <% include partials/flash-error.html %>
+            <% include partials/flash-alert.html %>
+          </div>
+          <div class="signin-form">
+            <% include partials/logo.html %>
+            <h3>Hmm, it's likely that <%= companyName %> already uses Snugg Pro.</h3>
+            <p>
+              If you’re trying to join an existing company, ask for an invite from your company admin.
+              <br/>
+              <a href="javascript:void(0);" onclick="window.Intercom('showNewMessage')">Contact support</a> if you need assistance.
+              <br/>
+            </p>
+            <br/>
+            <a href="https://snuggpro.com/join-existing-company" class="btn btn-block btn-lg btn-brand-1">Join an existing company</a>
+
+            <h5 style="margin-top: 40px; margin-bottom: 30px" class="title-divider">
+              <span style="background-color: #fff;">OR PROCEED WITH CAUTION</span>
+            </h5>
+            <p>If you are absolutely sure that this is a brand new company, re-enter your password below to create it.</p>
+            </p>
+            <br/>
+            <form id="sign-up" method="post">
+              <fieldset>
+                  <input type="hidden" id="company_name" class="form-control input-lg" required="required" name="company_name" value="<%= flashBody('company_name') %>" />
+                  <input type="hidden" id="first_name"  class="form-control input-lg" required="required" name="first_name" value="<%= flashBody('first_name', '') %>" />
+                  <input type="hidden" id="last_name" class="form-control input-lg" required="required" name="last_name" value="<%= flashBody('last_name', '') %>" />
+                  <input type="hidden" id="email" class="form-control input-lg" required="required" name="email" value="<%= flashBody('email', email) %>" />
+                  <input type="hidden" data-form="uniform" name="terms_of_use" id="terms_of_use" value="1"  required="required" >
+
+                  <div class="form-group">
+                      <label class="control-label" for="password">Password</label> (<span onclick="showHidePwd()"  style="cursor: pointer; color: #C87D00;" id="showHideBtn" >Show</span>)
+                      <div class="controls">
+                          <input type="password" id="password" class="form-control input-lg" required="required" name="password" value="" autocomplete="off" />
+                      </div>
+                  </div>
+              </fieldset>
+              <div style="padding-bottom: 20px">
+                  <input type="submit" name="submit_anyway" class="btn btn-link btn-lg" style="background-color: transparent;" value="Create new company" />
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/src/<%- paths.register %>"></script>
+</div>
+</body>
+
+</html>
+<script>
+    function showHidePwd () {
+        var passwordField = document.getElementById('password');
+        var passwordFieldType = passwordField.getAttribute('type');
+        var button=document.getElementById('showHideBtn')
+
+        if (passwordFieldType === 'text') {
+            passwordField.setAttribute('type', 'password');
+            button.textContent='Show';
+        }
+        else {
+            passwordField.setAttribute('type', 'text');
+            button.textContent='Hide';
+        }
+    }
+</script>

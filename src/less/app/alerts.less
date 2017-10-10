@@ -1,0 +1,250 @@
+// // ==============  Dynamic Alerts Container
+
+.alerts-container{
+}
+
+// ==============  Basic Alert Styling
+.alert{
+  display: block;
+  width: 100%;
+  padding: 2px 5px;
+  // overflow: hidden;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 10px;
+
+  h4{
+    font-size: 1.1em;
+    color: inherit;
+    font-weight: 600;
+  }
+  p{
+    // font-size: .9em;
+    margin-bottom: 10px;
+  }
+  a {
+    color: #486BBE;
+    text-decoration: underline;
+    &:hover{
+      color: lighten(#486BBE, 10%);
+    }
+    &:active{
+      color: darken(#486BBE, 5%);
+    }
+  }
+  &.alert-live{
+    padding: 0;
+    border-radius: 0;
+    display: inline-block;
+    width: auto;
+    border: 0;
+    margin: 5px 0;
+    &.character-counter {
+      display: inline;
+    }
+  }
+  &.alert-banner{
+    padding: 5px;
+    text-align: center;
+    border-top-style: solid;
+    margin: 0 -15px;
+    width: auto;
+    font-size: 12px;
+    border-radius: 0;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    left: 15px;
+    border-top: 1px solid #C9DADE;
+    .alert-message{
+      padding-bottom: 0;
+    }
+  }
+  &.alert-alert{
+    .transition(@push-menu-transition);
+    width: auto;
+    min-height: 40px;
+    margin: 0 0 10px 0;
+    border-radius: 6px;
+    padding: 10px 15px 0;
+    box-shadow: 0px 0px 18px rgba(0,0,0,0.4);
+    .close{
+      padding: 4px 12px;
+      font-size: 36px;
+      margin-right: -15px;
+      font-weight: 300;
+      margin-top: -10px;
+      opacity: 0.3;
+      &:hover{
+        opacity: .6
+      }
+    }
+    // Override alert-alert bg to desaturate them...
+    &.alert-success{
+      background-color: fade(#E6F1E0, 94%);
+    }
+    &.alert-warning{
+      background-color: fade(#F7F3E6, 94%);
+    }
+    &.alert-error{
+      background-color: fade(#F7ECEC, 95%);
+    }
+  }
+  &.alert-inline{
+    margin: 20px 0;
+    // padding-top: 15px;
+    // padding-bottom: 7px;
+    .alert-message{
+      padding-bottom: 0;
+    }
+  }
+  &.alert-field{
+    margin: 0 0 15px 0;
+    border:none;
+    .alert-message{
+      padding-bottom: 0;
+    }
+  }
+}
+.alert-job-id{
+  margin-left: 10px;
+  font-size: .8em;
+  opacity: .8;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 3px;
+  padding: 0 5px;
+  color: @gray-dark;
+  &:hover{
+    background-color: rgba(0,0,0,0.2);
+    color: black;
+  }
+  &:active{
+    background-color: rgba(0,0,0,0.5);
+    color: @gray-lighter;
+  }
+}
+.alert-message{
+  padding-bottom: 10px;
+  display: block;
+}
+.alert.alert-header{
+  margin: 0;
+  border-radius: 0;
+}
+.alert-warning{
+  background-color: #F7EFD3;
+  color: #47381A;
+  border-color: #E79739;
+  border-style: hidden;
+  border-width: 1px;
+
+}
+.alert-error{
+  background-color: #F7ECEC;
+  color: darken(#F1E3E3, 60%);
+  border-color: #C63636;
+  border-style: hidden;
+  border-width: 1px;
+  h2, h3, h4, h5{
+    color: darken(#F1E3E3, 60%) !important;
+  }
+}
+.alert-success{
+  background-color: #E3ECDE;
+  color: darken(#E6ECE0, 60%);
+  border-color: darken(#E6ECE0, 50%);
+  border-style: hidden;
+  border-width: 1px;
+
+}
+.alert-info{
+  background-color: #d9edf7;
+  color: darken(#d9edf7, 55%);
+  border-color: rgb(182, 221, 242); //darken(#E3F2D4, 10%);
+  border-style: hidden;
+  border-width: 1px;
+  a{
+    color: darken(#d9edf7, 68%);
+    text-decoration: underline;
+  }
+}
+.alert-neutral{
+  background-color: #F4F4F4;
+  border-color: darken(#F4F4F4, 4%);
+  border-style: solid;
+  border-width: 1px;
+  a {
+    color: @link-color;
+  }
+}
+
+.alert-internal{
+  background-color: #28548A;
+  color: white;
+  padding: 20px;
+  .box-shadow(0 2px 5px rgba(0,0,0,0.6));
+}
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+@media (max-width: @screen-xs-max) {
+  .push-left{
+    .alert.alert-alert{
+      left: @side-left-width + 10;
+    }
+  }
+  .form-control.input-header.rec-input-header{
+    font-size: 15px;
+    font-weight: 600;
+    min-width: 255px;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .push-left{
+    .alert.alert-alert{
+      left: @side-left-width + 10;
+    }
+  }
+  .alert.alert-alert{
+    left: @side-left-width + 10;
+  }
+  .alert.alert-banner{
+    left: 75px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* ONLY extra short devices (phones less than 568px)  This is a fringe case*/
+@side-left-width-short: 108px;
+
+
+@media (max-height: @short-screen-max){
+}
+
+@media (max-height: @short-screen-max) and (max-width: @screen-xs-max) {
+// NEXT LINES ACTUALLY MAKE THE LEFT SIDENAV USABLE FOR LANDSCAPE IPHONE
+  .push-left{
+    .container-fluid.container-core{
+    }
+    .side-left{
+      .transform(tranformX(0));
+    }
+  }
+}
+@media (max-height: @short-screen-max) and (min-width: @screen-sm-min) {
+  // Style push menu
+}
+
+// ====================  PRINTING TWEAKS ======================
+@media print{
+}

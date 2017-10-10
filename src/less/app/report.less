@@ -1,0 +1,873 @@
+
+//- ================ REPORT VARIABLES =================
+
+// Color palette
+@report-color-1: #182416; //very dark green
+@report-color-2: #5C5442; //dark brown
+@report-color-3: #DAE8CC;
+@report-color-4: #E4E4E4; // light gray
+@report-color-5:#262626;  // dark gray (body)
+@report-color-6: "Unused";
+@report-color-7: #fff;  // plain old white
+@report-color-8: #797979; // gray
+@report-color-9: darken(@report-color-3, 62%); //#648B57; // dark green - background for callout
+@report-color-10: "Unused";
+@report-border-radius: 2px;
+
+@report-font-family: @font-family-sans-serif;
+
+
+//-----------------  Calculating for pagination -----------------
+
+
+@report-page-width: @reportGridRowWidth; //942, 953, 964
+
+// IMPORTANT: @report-page variables are actualy used on .r-container
+// LETTER PAPER ASPECT RATIO: On an 8.5 x 11 page, the aspect ratio is 1 : 1.294
+// DEPRECATED ASPECT RATIO: Assuming a .5" margin on all sides, the printable page size becomes 7.5 x 10.  The aspect ratio thus becomes 1 :1.333;
+
+// CURRENT ASPECT RATIO: (16/08/2016) - We must factor the margin (technically padding)
+// which is 0.3in 0.5in 0.2in. Printable papersize becomes 8 x 10. Ratio is thus 1:1.25
+
+@report-page-height: round(@report-page-width/1.25);    // 763 but was 719
+
+// Use this to set header and footer height
+@report-header-height:60px;  // previously 12%
+@report-footer-height:35px; // 50px total when accounting for top margin of 15px
+
+// Use this to calculate .report-main and .report-sidebar
+@report-main-height: @report-page-height - @report-header-height - @report-footer-height;
+// @report-main-height: 598px;  // 598, 622, 629 < v3 uses this line and comments the one above
+
+// Use this to pad the sidebar and calculate sidebar height
+@report-sidebar-padding:8px;
+
+// Set the height of the report sidebar accounting for padding and potential border around sidebar area
+@report-sidebar-height: @report-main-height;
+// Min height on textareas until we find a better fix for blank states
+@textarea-min-height: 79px;
+
+
+
+.repaginate-report {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+}
+
+.popover{
+  &.popover-report-settings{
+    // left: 7px;
+    .arrow{
+      left: 50px;
+      right: auto;
+    }
+    .control-label{
+      text-align: left;
+    }
+    .input-group{
+      float:right;
+    }
+  }
+  &.popover-report-themes{
+    max-width: 250px;
+    .arrow{
+      left: 104px;
+      right: auto;
+    }
+  }
+}
+
+// Report Scroll Sply
+.scroll-spy.report-scroll-spy{
+  position: fixed;
+  background: darken(@custom-color-3, 4%);
+  width: 100%;
+  z-index: 12;
+  height: auto;
+  top: 25px;
+  padding: 0;
+  opacity: 1;
+  border-top: 1px solid darken(@custom-color-3, 15%);
+}
+
+// Editing Toolbars in header
+@rep-toolbar-height: @header-height;
+.content-header.content-header-report{
+  background-color: darken(@custom-color-3, 4%);
+  min-height: @rep-toolbar-height;
+  height: auto;
+  h1{
+    width: 85%;
+    display: inline-block;
+    font-weight: 300;
+    margin: 0;
+    font-size: 18px;
+    color: #575757;
+    line-height: @rep-toolbar-height;
+    input[type="text"]{
+      width: 100%;
+    }
+  }
+  .rep-toolbar{
+    width: 100%;
+    height: @rep-toolbar-height;
+    float:left;
+    .rep-btn{
+      position:relative;
+      text-align: center;
+      color: @custom-color-1;
+      background-color: transparent;
+      white-space: inherit;
+      font-size: 11px;
+      min-width: @rep-toolbar-height;
+      min-height: 42px;
+      padding: 5px 4px 3px;
+      margin: 2px 4px 3px 0;
+      [class^="ico-"],[class*=" ico-"] {
+        display: block;
+        float:none;
+        font-size: 18px;
+        line-height: 18px;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      &:hover{
+        .box-shadow(0 0 5px rgba(0,0,0,0.5));
+        background-color: inherit;
+      }
+      &:active, &:focus, &.active{
+        .box-shadow( inset 0 0 3px rgba(0,0,0,0.3));
+        background-color: darken(@custom-color-3, 6%);
+
+      }
+    }
+  }
+  .rep-toolbar-report{
+    text-align: center;
+  }
+  .rep-toolbar-page{
+    float: left;
+    text-align: center;
+    > .btn{
+      width: 20%;
+    }
+
+  }
+}
+.themes-list{
+  margin: 0;
+  padding: 0;
+  .btn{
+    width: 100%;
+    clear:both;
+    float:none;
+    text-align: left;
+    border-radius: 3px;
+    padding: 10px;
+    &.active{
+      .box-shadow(none);
+    }
+  }
+  .report-theme{
+    width: 60px;
+    height: 40px;
+    margin: 0 10px 0 0;
+  }
+}
+
+
+.report-theme{
+  height: 16px;
+  width: 25px;
+  margin: auto;
+  border-radius: 2px;
+  margin-bottom: 3px;
+  border: 1px solid @custom-color-1;
+}
+
+.report-present{ // styles body of present page
+  background: #E4E4E4;
+  padding-top: 5px;
+  min-width: @report-page-width + 40;
+}
+
+// Encapsulates all report pages
+.in-app-report{
+  .content{
+   background-color: lighten(desaturate(@custom-color-3, 5%), 3%);
+   overflow-x: scroll;
+   padding-top: 50px;
+  }
+  .editable-page-header{
+    margin-right: 20px;
+    width: unit(ceil(965*.7), px);
+  }
+  .report-photo-row{
+    textarea {
+      opacity: 0;
+      padding: 10px 5px 5px;
+      &:hover{
+        background-color: rgba(0,0,0,0.1);
+      }
+      &:focus{
+        .box-shadow(0 0 10px lighten(@custom-color-1, 45%));
+        border-color: lighten(@custom-color-1, 50%);
+        opacity: 1;
+        transition: opacity .2s ease;
+      }
+    }
+  }
+  .report-page{
+    zoom: 70%;
+    margin: 10px 0;
+    border-radius: 4px;
+    opacity: 1;
+    padding: 10px;
+    width: 965px;
+    .box-shadow(0 0 10px rgba(0,0,0,0.4));
+    .report-body, .report-main{
+      height: auto;
+      overflow: visible;
+      min-height: @report-main-height;
+    }
+
+    .report-sidebar{
+      height: auto;
+      min-height: @report-main-height;
+      position: absolute;
+      bottom: 10px;
+      top: 10px;
+      width: 222px;
+    }
+  }
+}
+
+.report-page {
+    font-family: @report-font-family;
+    background-color: #fff;
+    border: 1px solid desaturate(darken(@custom-color-3, 10%), 10%);
+    padding: 30px;
+    margin: 10px 9px 20px 20px;
+    width: 1005px;
+    position: relative;
+    border-radius: 4px;
+    /* -- warn if printing on the in-app report page -- */
+
+  // =================== BASE STYLING =======================
+
+  h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 10px 0;
+      text-rendering: optimizespeed;
+
+  }
+  h1 {
+      color:@report-color-1;
+      font-size: 34px;
+      font-weight: 600;
+      margin: 10px 0 0;
+  }
+  h2 {
+      color:@report-color-2;
+      font-size: 22px;
+      font-weight: 600;
+
+  }
+  h3 {
+      color:darken(@report-color-2, 15%);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+  }
+  h4 {
+      color: @report-color-5;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 5px;
+  }
+  h5 {
+      color:@report-color-5;
+      font-size: 15px;
+      margin-bottom: 5px;
+  }
+  h6 {
+    margin: 0px;
+  }
+  p{
+    line-height: 18px;
+  }
+  // =================== MODULES/COMPONENTS =======================
+  hr.thick{
+    border-top: 4px solid @gray-lighter;
+  }
+  .report-header {
+    .clearfix();
+    height: @report-header-height;
+    overflow: hidden;
+    .company {
+        img {
+            height: 60px;
+            width:auto;
+        }
+    }
+    .program-branding {
+      padding-top: 10px;
+      height: @report-header-height - 5;
+      overflow: hidden;
+      text-align: right;
+      font-size: 12px;
+      .clearfix();
+      img {
+          height: 30px;
+          width:auto;
+      }
+      span {
+          float: right;
+          text-align: right;
+          display: block;
+      }
+    }
+    .report-title{
+      height: 60px;
+      overflow-y: hidden;
+      .report-title-input{
+        color:@report-color-1;
+        font-size: 36px;
+        margin: 0;
+        height:auto;
+        padding: 1px 0 0 0;
+        width:99%;
+      }
+    }
+  }
+  .report-logo{
+    height: @report-header-height;
+    overflow:hidden;
+    .clearfix();
+    img {
+      float: left;
+      min-height: 30px;
+      display: block;
+      max-height: 55px;
+      max-width: 222px;
+      width: auto;
+      height: auto;
+      .box-sizing(border-box);
+    }
+    h2{
+      text-align:center;
+      padding:8px 3px;
+      font-size:18px;
+      white-space:nowrap;
+      overflow:hidden;
+    }
+  }
+
+  .report-logo-area {
+    // width: 220px;
+    height: 60px;
+    text-align: center;
+  }
+
+  .report-logo-area span {
+    display: block;
+    padding-top: 25px;
+  }
+  .report-body{
+    height: @report-main-height;
+  }
+  .report-sidebar {
+    position: relative;
+    height: @report-sidebar-height;
+    border-radius: @report-border-radius;
+    line-height: 18px;
+    padding: @report-sidebar-padding;
+    h3{
+      margin-top: 10px;
+    }
+    dl{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 0.95em;
+      line-height: 1em;
+      .clearfix();
+      dt{
+        float: left;
+        font-weight: normal;
+        max-width: 125px;
+        min-width: 100px;
+        margin-bottom: 6px;
+        line-height: 18px;
+        .clearfix();
+
+      }
+      dd{
+        float: right;
+        margin-bottom: 6px;
+        line-height: 18px;
+
+      }
+    }
+  } // report-sidebar
+  .report-main{
+    height: @report-main-height;
+    overflow:hidden;
+  }
+  .report-photo-row{
+      border-radius: @report-border-radius;
+  }
+  .report-footer {
+    .clearfix();
+    padding-top: 10px;
+    color: @report-color-8;
+    height: @report-footer-height;
+    font-size: 12px;
+    .program-logo-footer{
+      max-height: @report-footer-height - 10;
+      width: auto;
+      margin-left: 5px;
+    }
+  } // report-footer
+
+  .recommendation-category-label{
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: rgba(0,0,0,0.7);
+    text-transform: uppercase;
+  }
+
+  //- ================ Cover page styling =================
+  &.report-page-cover{
+    .report-body {
+      .report-main {
+        .snugg-upload-prompt-text{
+          position: absolute;
+          z-index: 3;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          height: 150px;
+          width: 160px;
+          text-align: center;
+          font-size: 24px;
+          color: @gray-light;
+          cursor: pointer;
+        }
+        .uploadcare-widget-button.uploadcare-widget-button-open{
+          display: none !important;
+        }
+        .uploadcare-widget{
+          display:block !important;
+          width:99.5%;
+          height:347px;
+          cursor: pointer;
+          .uploadcare-widget-dragndrop-area{
+            width:100%;
+            height:100%;
+            position: relative;
+            border-radius:0;
+            padding: 0 !important;
+            left: 0 !important;
+            margin: 0;
+            line-height: normal;
+            padding: 0;
+            top: 0;
+            display: block;
+          }
+          &.uploadcare-widget .uploadcare-widget-circle{
+            display:none;
+          }
+        }
+      }
+    }
+  }
+  .intro-cover {
+    .wysiwyg{
+      height: 270px;
+      border: 1px dashed #bbb;
+      &:focus{
+        border: 1px solid #bbb;
+      }
+    }
+  }
+
+
+  // report-page-cover
+  // --------------------------------  Inline editing patterns ----------------------------
+
+  // ======================= Concerns page styling =====================
+  &.report-page-concerns{
+
+  }
+
+  //- =================== Recommendations (solutions) list page styling =======================
+  &.report-page-solutions{
+  } // report-page-solutions
+
+  //- =================== Financing page  =======================
+
+  &.report-page-financing{
+  }
+
+  //- =================== Recommendation detail page  =======================
+  &.report-page-upgrade_details{
+  } // report-page-upgrade-details
+
+
+  //- =================== Health and safety tests page  =======================
+  &.report-page-health{
+  } // report-page-safety
+
+
+  //- =================== Additional notes page =======================
+  &.report-page-additional_notes{
+  } // report-page-additional_notes
+
+  //- =================== Technical specifications page =======================
+  &.report-page-metrics{
+    h6{
+      font-size: 1em;
+    }
+  }
+
+  //- =================== Home Energy Score page =======================
+  @hesGreen: #196234;
+  @hesBlue: #223F74;
+  &.report-page-hes{
+    .report-header{
+      overflow: visible;
+    }
+    .report-main{
+      overflow: visible;
+    }
+    .report-footer{
+    }
+    .nav.nav-tabs li > a{
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    // font-size: .85em;
+    // text-align: center;
+    .hes-home{
+      padding-top: 30px;
+      padding-left: 20px;
+      dt{
+        font-size: 11px;
+        color: @hesGreen;
+        text-transform: uppercase;
+        float:left;
+        width: 120px;
+        padding-top: 3px;
+        padding-right: 10px;
+        font-weight: 600;
+        float:left;
+        clear: left;
+
+      }
+      dd{
+        float:left;
+        font-weight: 700;
+        font-size: 15px;
+      }
+    }
+    .hes-container{
+      margin-top: 30px;
+      margin-left: 20px;
+      margin-right: 10px;
+      padding: 90px 0 15px 85px;
+      position: relative;
+      border-bottom: 4px solid @hesBlue;
+
+      .clearfix();
+    }
+    .hes-legend{
+      float:left;
+      min-height: 60px;
+      padding: 24px 5px 0;
+      text-align: left;
+      font-weight: 600;
+      font-size: 12px;
+      &:last-child{
+        text-align: left;
+      }
+    }
+    .hes-spectrum{
+        position: relative;
+        float:left;
+      ul{
+        text-align: center;
+        background: rgba(217,217,217,1);
+        background: -moz-linear-gradient(left, rgba(217,217,217,1) 0%, rgba(203,212,191,1) 44%, rgba(137,198,72,1) 97%, rgba(137,198,72,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(217,217,217,1)), color-stop(44%, rgba(203,212,191,1)), color-stop(97%, rgba(137,198,72,1)), color-stop(100%, rgba(137,198,72,1)));
+        background: -webkit-linear-gradient(left, rgba(217,217,217,1) 0%, rgba(203,212,191,1) 44%, rgba(137,198,72,1) 97%, rgba(137,198,72,1) 100%);
+        background: -o-linear-gradient(left, rgba(217,217,217,1) 0%, rgba(203,212,191,1) 44%, rgba(137,198,72,1) 97%, rgba(137,198,72,1) 100%);
+        background: -ms-linear-gradient(left, rgba(217,217,217,1) 0%, rgba(203,212,191,1) 44%, rgba(137,198,72,1) 97%, rgba(137,198,72,1) 100%);
+        background: linear-gradient(to right, rgba(217,217,217,1) 0%, rgba(203,212,191,1) 44%, rgba(137,198,72,1) 97%, rgba(137,198,72,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#89c648', GradientType=1 );
+        display: inline-block;
+        float:left;
+        .clearfix();
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-weight: 700;
+        font-size: 20px;
+        li{
+          padding: 35px 0;
+          margin: 0;
+          float:left;
+          border-right: 3px solid white;
+          box-sizing: border-box;
+          &:last-child{
+            border-right: none;
+          }
+        }
+      }
+
+      }
+    .hes-definition{
+      padding-left: 20px;
+      padding-top: 15px;
+      font-size: .85em;
+      // margin-top: 15px;
+    }
+    .hes-stats{
+      margin-top: 15px;
+      color: #959394;
+      font-weight: 700;
+      text-align: right;
+      font-size: 10px;
+    }
+  }
+
+
+
+} // report-page
+
+// -- =================== Print preview page ======================
+.print-preview{
+
+  .report-page{
+    // height: 710px;
+    zoom: 100%;
+    margin: 8px auto 20px;
+  }
+
+  &.sample-job {
+    .report-page {
+      .sample-job-watermark();
+    }
+  }
+
+}
+// ----------- fixed nav intended to be discreet
+.discreet-navigation{
+  color: #fff;
+  text-align: center;
+  .btn{
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.5);
+    .border-radius(3px);
+    border: 1px solid rgba(0,0,0,0.65);
+    display:block;
+    color: #fff;
+    padding: 8px 10px 2px;
+    margin-bottom: 5px;
+    &:hover{
+      background-color: rgba(0,0,0,0.7);
+    }
+    &:active{
+      color: @custom-color-2;
+      background-color: rgba(0,0,0,0.9);
+
+    }
+  }
+}
+.discreet-navigation--right{
+  position: fixed;
+  right: 5px;
+  top: 5px;
+  z-index: 1000;
+}
+.discreet-navigation--left{
+  position: fixed;
+  left: 5px;
+  top: 5px;
+  z-index: 1000;
+}
+
+//- =================== Report Print Styles =======================
+@media print {
+  * {
+      text-shadow: none !important;
+      filter:none !important;
+      -ms-filter: none !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      .box-sizing(border-box);
+  }
+  body{
+    background:none;
+    background-image:none;
+    .report-present{
+      background:none;
+      background-image:none;
+      padding-top: 0;
+    }
+  }
+  .hidden-print{
+    display: none !important;
+  }
+  a.print-link[href^=http]{
+    font-weight: 700;
+    text-decoration: none;
+    &:after {
+      content:" <" attr(href) "> ";
+    }
+  }
+  .header,
+  .side-left,
+  .side-right {
+      // display: none;
+  }
+  .content{
+    background-image: none !important;
+    background: transparent !important;
+    padding:none !important;
+    margin:none !important;
+    border:none !important;
+  }
+  .discreet-navigation{
+    display:none !important;
+  }
+  .print-preview .report-page,{
+    padding: 0.3in 0.5in 0.2in;
+    margin:0 !important;
+    border:none !important;
+    width:auto !important;
+    // height: @report-page-height;
+    // overflow:hidden;
+    // Attempt to force page breaks. May need to use widows and orphans as well.
+    page-break-inside: avoid;
+    page-break-after: always;
+    &:last-child {
+        page-break-after: avoid;
+    }
+  }
+  .r-container {
+    img { max-width: 100% !important; }
+    margin:0 !important;
+    padding: 0 !important;
+    border:none;
+    position:relative;
+    opacity: 1;
+    .cover-photo-replace,
+    .cover-photo-upload {
+        display: none;
+    }
+    .img-border {
+        outline: 0;
+    }
+
+    .editor-area {
+        border: none;
+        &:hover, &:focus {
+            border: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            outline:none;
+        }
+    }
+  }
+  .repaginate-report {
+    display: none;
+  }
+}
+
+@page {
+    size: letter landscape;
+    margin: 0mm;
+}
+
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+@media (max-width: @screen-xs-max) {
+  .rep-toolbar{
+    border-bottom: 1px solid darken(@custom-color-3, 10%);
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .content-header.content-header-report{
+    .rep-toolbar{
+      .rep-btn {
+        max-width: 56px;
+      }
+
+    }
+    .rep-toolbar-title{
+      width: 240px;
+    }
+    .rep-toolbar-page{
+      width: 242px;
+    }
+  }
+  .in-app-report{
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .in-app-report{
+    .report-page{
+      zoom: 85%;
+    }
+    .editable-page-header{
+      margin-right: 20px;
+      width: unit(ceil(965*.85), px);
+    }
+  }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+  .in-app-report{
+    .report-page{
+      zoom: 100%;
+    }
+    .editable-page-header{
+      margin-right: 20px;
+      width: 965px;
+    }
+  }
+}
+
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+//  ================  THEME FILES ===================
+
+@import "report-theme/theme-mixin.less";
+@import "report-theme/theme-1.less";
+@import "report-theme/theme-2.less";
+@import "report-theme/theme-3.less";
+@import "report-theme/theme-4.less";
+@import "report-theme/theme-5.less";
+// @import "report-theme/theme-6.less";

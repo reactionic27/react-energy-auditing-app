@@ -1,0 +1,22 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div class="signin-container container-flex" style="padding: 15px">
+        <div class="col-sm-6 col-md-5 col-lg-4 col-xs-12 ">
+          <div class="signin-form row">
+            <% include partials/flash-error.html %>
+            <% include partials/flash-alert.html %>
+            <% include partials/logo.html %>
+            <h1>Log in</h1>
+            <div class="box-body bg-white">
+              <form id="sign-in" method="post">
+                <p>Enter your login information below to join <%= companyName %> on SnuggPro. </p>
+                <% include forms/login.html %>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

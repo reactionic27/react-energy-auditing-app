@@ -1,0 +1,172 @@
+.content-header{
+  .dropdown-menu{
+    overflow: visible;
+    padding: 0;
+    max-height: none;
+    .border-radius(2px);
+    border: none;
+    min-width: 200px;
+    // I needed this to inherit the width because the <li>s were overflowing [Jeff]
+    width: 100%;
+    margin-top: -1px;
+    text-align:left;
+    background-color: darken(@custom-color-3, 7%);
+    .box-shadow(1px 1px 2px rgba(0,0,0,0.3));
+    .active, .active > a, .active > a:hover, a:active, a:focus{
+      background-color: lighten(@custom-color-1, 15%);
+      background-image: none;
+      color: white;
+      .badge{
+        background-color: @custom-color-1;
+        color: darken(@custom-color-3, 10%);
+      }
+    }
+    > li{
+      &.top-divider{
+        border-top: 3px solid darken(@custom-color-3, 15%);
+        position: relative;
+      }
+    }
+    a{
+      padding: 13px 10px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 13px;
+      &:hover, &:focus{
+      background-color: lighten(@custom-color-1, 20%);
+      color: white;
+      outline: none;
+        .badge{
+          background-color: lighten(@custom-color-1, 12%);
+          color: @custom-color-3
+        }
+      }
+      &:active{
+        background-color: lighten(@custom-color-1, 5%);
+      }
+    }
+  }
+  .dropdown.btn-group{
+    width: 100%;
+    border-left: solid 0px transparent;
+    > .btn:first-child{
+      background-color: @custom-color-3;
+      border: none;
+    }
+    &#btn-group-companies{
+      position: relative;
+      z-index: 4;
+      > .btn{
+        border-left: none;
+        border-radius: 0
+      }
+    }
+    &#btn-group-stages{
+      z-index: 3;
+      position:relative;
+      text-align: left;
+      > .btn{
+        border-left: none;
+        border-radius: 0
+      }
+    }
+    &#btn-group-sort{
+      border-right: 1px solid  darken(@custom-color-3, 10%);
+      text-align: left;
+      > .btn{
+        border-left: none;
+        border-radius: 0
+      }
+    }
+    .btn{
+      width: 100%;
+      float: none;
+      text-align: left;
+      border-color: transparent;
+      border-top: none;
+      border-bottom: none;
+      border-right: none;
+      background-color: inherit;
+      border-radius: 0;
+      margin:auto;
+      height: 100%;
+      width: 100%;
+      min-width: 60px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: @custom-color-1;
+      .border-radius(0);
+      [class*=" ico-"], [class^="ico-"]{
+        font-size: 16px;
+        display: block;
+        float:none;
+        clear:both;
+      }
+      &:hover{
+      background-color: darken(@custom-color-3, 7%);
+        .arrow-right{
+          border-left-color: darken(@custom-color-3, 7%);
+        }
+        .arrow-right-n1, .arrow-right-n2{
+          border-right-color: darken(@custom-color-3, 7%);
+        }
+      }
+      &:active, &.active, &:focus{
+        color: @custom-color-1;
+        box-shadow: none;
+        background-color: darken(@custom-color-3, 12%);
+        .arrow-right{
+          border-left-color: darken(@custom-color-3, 12%);
+        }
+      }
+      .arrow-right {
+        width: 0;
+        height: 0;
+        border-top: (@header-height/2) solid transparent;
+        border-bottom: (@header-height/2) solid transparent;
+        border-left: 14px solid @custom-color-3;
+        float: right;
+        position: absolute;
+        right: -13px;
+        top: 0;
+        z-index: 10;
+        &.arrow-right-border{
+          right: -14px;
+          border-left-color: darken(@custom-color-3, 10%);
+          z-index: 9;
+        }
+      }
+      &.btn-lg{
+        font-size: 14px;
+        padding: 14px 13px 14px 20px;
+        .caret{
+          margin: auto 0 auto 8px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 8px;
+          font-size: 24px;
+          border-left-width: 5px;
+          border-right-width: 5px;
+          border-top-width: 5px;
+          opacity:0.7;
+        }
+        .badge{
+          margin: 0 10px 0 10px;
+          top: 1px;
+        }
+      }
+    }
+    &.open .dropdown-toggle{
+      .box-shadow(none);
+      background-color: darken(@custom-color-3, 7%);
+      color: @custom-color-1;
+      .arrow-right {
+        border-left: 14px solid darken(@custom-color-3, 7%);
+        &.arrow-right-border{
+          border-left-color: darken(@custom-color-3, 10%);
+        }
+      }
+    }
+  }
+}

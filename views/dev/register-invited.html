@@ -1,0 +1,28 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div class="container-fluid signin-container">
+        <div class="signup-form row" style="margin-bottom: 40px">
+          <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2 col-lg-4 col-lg-offset-4">
+              <% include partials/flash-error.html %>
+              <% include partials/flash-alert.html %>
+              <% include partials/logo.html %>
+              <h1>Join <%= companyName %><br> on Snugg Pro</h1>
+              <h4>Snugg Pro is an energy auditing &amp; sales app.</h4>
+              <div class="signin-form">
+              <form id="sign-up" method="post">
+                <p>
+                If you already have a Snugg Pro account, <a href="/login-invited/<%= uuid %>">click here to log in.</a>
+                </p>
+                <% include forms/register-main.html %>
+                <div class="form-actions" style="padding-bottom: 20px;">
+                  <input type="submit" class="btn btn-block btn-large btn-brand-1" value="Join company" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

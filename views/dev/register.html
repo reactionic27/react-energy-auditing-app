@@ -1,0 +1,58 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div style="background-color: #fff" class="container container-fluid">
+        <!-- <div class="row">
+          <div class="col-sm-12" style="text-align: center; padding-bottom: 10px;">
+            </p>
+             <strong>Need help?</strong>
+             <a href="javascript:void(0);" onclick="window.Intercom('showNewMessage')">Live chat with us</a>
+            <small>Support hours are Mon thru Fri 8AM to 6PM Mountain.</small>
+          </div>
+        </div> -->
+      </div>
+    <div class="container-fluid signin-container">
+      <div class="signup-form row" style="margin-bottom: 40px">
+        <div class="col-sm-8 col-md-6 col-md-offset-3 col-sm-offset-2 col-lg-4 col-lg-offset-4">
+        <% include partials/flash-error.html %>
+        <% include partials/flash-alert.html %>
+          <div class="signin-form">
+            <% include partials/logo.html %>
+            <h1>Create a new company</h1>
+            <p>
+              Did you mean to
+              <a href="http://snuggpro.com/join-existing-company">join an existing company</a> <br/>
+              or
+              <a href="/login">log in as an existing user</a> ?
+            </p>
+            <br/>
+            </p>
+            <form id="sign-up" method="post">
+              <fieldset>
+                <div class="form-group">
+                  <label class="control-label" for="company_name">New company name</label>
+                  <div class="controls">
+                    <input type="text" id="company_name" class="form-control input-lg" required="required" name="company_name" value="<%= flashBody('company_name') %>" />
+                  </div>
+                </div>
+              </fieldset>
+              <hr />
+              <% include forms/register-main.html %>
+              <div class="form-actions" style="padding-bottom: 20px">
+                <input type="submit" name="submit_normal" class="btn btn-block btn-lg btn-brand-1" value="Create a new company" />
+
+                <% if (flash.error && flash.error=='Seems like your company is already registerd. Please Click link below "join an existing company" or click on "Create a new compnay anyway".') { %>
+                <input type="submit" name="submit_anyway" class="btn btn-block btn-lg btn-brand-1" value="Create a new compnay anyway" />
+                <% } %>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="/src/<%- paths.register %>"></script>
+  </body>
+</html>

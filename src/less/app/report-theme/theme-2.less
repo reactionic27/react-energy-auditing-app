@@ -1,0 +1,18 @@
+// #####################################################
+// ##############     WINTER GREEN        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@theme-2-color-1: #DEECE6;
+@theme-2-color-2: darken(@theme-2-color-1, 62%);
+
+.theme-swatch-2{
+  .theme-colors(@theme-2-color-1, @theme-2-color-2);
+}
+.theme-2 {
+  @color-1: @theme-2-color-1;
+  @color-2: @theme-2-color-2;
+  // Specify @color-3 if necessary
+  .theme(@color-1, @color-2, @color-3);
+}

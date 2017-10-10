@@ -1,0 +1,20 @@
+// #####################################################
+// ##############     SUBTLE TAN        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@theme-5-color-1: @custom-color-3;
+@theme-5-color-2: darken(@theme-5-color-1, 62%);
+@theme-5-color-3: lighten(@custom-color-3, 1%); // Specify color 3 if necessary
+
+.theme-swatch-5{
+  .theme-colors(@theme-5-color-1, @theme-5-color-2);
+}
+.theme-5 {
+  @color-1: @theme-5-color-1;
+  @color-2: @theme-5-color-2;
+  @color-3: @theme-5-color-3;
+
+  .theme(@color-1, @color-2, @color-3);
+}

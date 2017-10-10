@@ -1,0 +1,18 @@
+// #####################################################
+// ##############     GRAPHITE GRAY        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@theme-4-color-1: #E5E8E7;
+@theme-4-color-2: darken(@theme-4-color-1, 62%);
+
+.theme-swatch-4{
+  .theme-colors(@theme-4-color-1, @theme-4-color-2);
+}
+.theme-4 {
+  @color-1: @theme-4-color-1;
+  @color-2: @theme-4-color-2;
+  // Specify @color-3 if necessary
+  .theme(@color-1, @color-2, @color-3);
+}

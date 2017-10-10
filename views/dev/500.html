@@ -1,0 +1,42 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div class="container-fluid">
+        <div class="headless-page row">
+          <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <% include partials/logo.html %>
+            <h1>You just encountered a server error</h1>
+            <p>We're really sorry about this. We've been notified and will look into it. In the meantime, here are some things you could try on your end:<p>
+            <ul>
+              <li>Go to <a href="/">the main jobs screen</a> and try again.</li>
+              <li>Refresh this page in a moment.</li>
+              <li>Contact support if this problem doesn't go away in the next few minutes.</li>
+            </ul>
+            <h3>About contacting support</h3>
+            <p>First please take note of the beginning of the error message below:</p>
+            <div class="well scroll-past-200 ma-tb-20 alert-error">
+<pre>
+<%= error.data ? JSON.stringify(error.data, null, 2).replace(/\\n/g, '\n') : error.stack %>
+</pre>
+            </div>
+            <p><strong>Then get support in one of the following ways:</strong></p>
+            <ul>
+              <li><a href="http://snuggpro.com/support-section" target="_blank">Check out our support topics</a></li>
+              <li><a href="javascript:void(0);" onclick="window.Intercom('showNewMessage')">Live chat with us</a></li>
+              <li><a href="//snuggpro.com/contact">Fill out our online contact form</a></li>
+              <li>Email us at <a href="mailto:pro@snugghome.com?subject=500%20error%20in%20app">pro@snugghome.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(){ window.Intercom('boot', {
+        app_id: "<%= (env === 'production') ? 'mkemf73s' : 'uqbbgb7o'%>",
+        email: "<%= account.email %>",
+        name: "<%= (account.first_name + ' ' + account.last_name) %>",
+        user_id: "<%= account.id %>"
+      })})()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Snugg Pro<%= title ? ': ' + title : '' %></title>
+
+    <!-- Run in standalone mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0 shrink-to-fit=no">
+    <!--  TODO: above shrink-to-fit=no ?-->
+    <!-- Icons -->
+    <link href="/img/favicon.ico" rel="shortcut icon" />
+    <!-- For non-Retina (@1× display) iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="/img/touch-icons/60.png">
+    <!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/touch-icons/72.png">
+    <!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="80x80" href="/img/touch-icons/80.png">
+    <!-- For iPhone with @2× display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/touch-icons/144.png">
+    <!-- For iPhone with @2× display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/img/touch-icons/120.png">
+    <!-- For iPad with @2× display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/touch-icons/144.png">
+    <!-- For iPad with @2× display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/img/touch-icons/152.png">
+    <!-- For iPhone 6 Plus with @3× display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/img/touch-icons/180.png">
+    <!-- For Chrome for Android: -->
+    <link rel="icon" sizes="192x192" href="/img/touch-icons/192.png">
+
+
+    <!-- STARTUP IMAGES -->
+    <!-- iPad retina portrait startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-1536x2008.png"
+      media="(device-width: 768px) and (device-height: 1024px)
+             and (-webkit-device-pixel-ratio: 2)
+             and (orientation: portrait)"
+      rel="apple-touch-startup-image">
+    <!-- iPad retina landscape startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-1496x2048.png"
+      media="(device-width: 768px) and (device-height: 1024px)
+             and (-webkit-device-pixel-ratio: 2)
+             and (orientation: landscape)"
+      rel="apple-touch-startup-image">
+    <!-- iPad non-retina portrait startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-768x1004.png"
+      media="(device-width: 768px) and (device-height: 1024px)
+             and (-webkit-device-pixel-ratio: 1)
+             and (orientation: portrait)"
+      rel="apple-touch-startup-image">
+    <!-- iPad non-retina landscape startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-748x1024.png"
+      media="(device-width: 768px) and (device-height: 1024px)
+             and (-webkit-device-pixel-ratio: 1)
+             and (orientation: landscape)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-1242x2148.png"
+      media="(device-width: 414px) and (device-height: 736px)
+             and (-webkit-device-pixel-ratio: 3)
+             and (orientation: portrait)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone 6 Plus landscape startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-1182x2208.png"
+      media="(device-width: 414px) and (device-height: 736px)
+             and (-webkit-device-pixel-ratio: 3)
+             and (orientation: landscape)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone 6 startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-750x1294.png"
+      media="(device-width: 375px) and (device-height: 667px)
+             and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone 5 startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-640x1096.png"
+      media="(device-width: 320px) and (device-height: 568px)
+             and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone < 5 retina startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-640x920.png"
+      media="(device-width: 320px) and (device-height: 480px)
+             and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="/img/startup-images/apple-touch-startup-image-320x460.png"
+      media="(device-width: 320px) and (device-height: 480px)
+             and (-webkit-device-pixel-ratio: 1)"
+      rel="apple-touch-startup-image">
+
+    <!-- HEAP Analytics -->
+
+    <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(t,e){window.heap.appid=t,window.heap.config=e;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+t+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(t){return function(){heap.push([t].concat(Array.prototype.slice.call(arguments,0)))}},p=["clearEventProperties","identify","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2469052773");
+    </script>
+
+    <!-- Intercom -->
+    <% if (env === 'production') { %>
+      <script>
+        window.intercomSettings = {
+          app_id: "mkemf73s"
+        };
+      </script>
+      <script>
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/mkemf73s';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+      </script>
+    <% } else { %>
+      <script>
+        window.intercomSettings = {
+          app_id: "uqbbgb7o"
+        };
+      </script>
+      <script>
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/uqbbgb7o';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+      </script>
+    <% } %>
+    <!-- scripts -->
+    <script src="/src/<%- paths.commons %>"></script>
+    <script src="/src/<%- paths.styles %>"></script>
+  </head>

@@ -1,0 +1,36 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div class="container-fluid">
+        <div class="headless-page row">
+          <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <% include partials/logo.html %>
+            <h1>This page cannot be found</h1>
+            <p>This looks like a bad link, also called a 404 error.</p>
+            <h3>Luckly, there are some things you can try to keep going:</h3>
+            <ul>
+              <li>Start from <a href="/">the main jobs screen</a> and retrace your steps</li>
+              <li>If you typed a web adddress manually, please check for typos in the browser's address bar</li>
+              <li>Contact support if you keep hitting this page or don't know what else to do.</li>
+            </ul>
+            <h3>Here is how to get support</h3>
+            <ul>
+              <li><a href="http://snuggpro.com/support-section">Check out our support topics</a></li>
+              <li><a href="javascript:void(0);" onclick="window.Intercom('showNewMessage')">Live chat with us</a></li>
+              <li><a href="//snuggpro.com/contact">Fill out our online form</a></li>
+              <li>Email us at <a href="mailto:pro@snugghome.com?subject=404%20error%20in%20app">pro@snugghome.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(){ window.Intercom('boot', {
+        app_id: "<%= (env === 'production') ? 'mkemf73s' : 'uqbbgb7o'%>",
+        email: "<%= account.email %>",
+        name: "<%= (account.first_name + ' ' + account.last_name) %>",
+        user_id: "<%= account.id %>"
+      })})()
+    </script>
+  </body>
+</html>

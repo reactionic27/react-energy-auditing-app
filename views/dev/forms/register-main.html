@@ -1,0 +1,61 @@
+<fieldset>
+  <div class="form-group">
+    <label class="control-label" for="first_name">First name</label>
+    <div class="controls">
+      <input type="text" id="first_name"  class="form-control input-lg" required="required" name="first_name" value="<%= flashBody('first_name', '') %>" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label" for="last_name">Last name</label>
+    <div class="controls">
+      <input type="text" id="last_name" class="form-control input-lg" required="required" name="last_name" value="<%= flashBody('last_name', '') %>" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+      <input type="text" id="email" class="form-control input-lg" required="required" name="email" value="<%= flashBody('email', email) %>" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label" for="password">Password</label> ( <span onclick="showHidePwd()"  style="cursor: pointer" id="showHideBtn" >Show</span> )
+    <div class="controls">
+      <input type="password" id="password" class="form-control input-lg" required="required" name="password" value="" autocomplete="off" />
+    </div>
+  </div>
+
+</fieldset>
+
+<br />
+
+<fieldset>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" data-form="uniform" name="terms_of_use" id="terms_of_use" value="1"  required="required" <% if (flashBody('terms_of_use')) { %>checked<% } %>> I have read and accept the terms of use and terms of payment:
+    </label>
+  </div>
+</fieldset>
+
+<div style="height:160px;overflow:scroll;margin-bottom: 20px;background-color:#F1F1F1;padding:8px;border:1px solid #cdcdcd; border-radius: 4px;">
+  <% include ../partials/terms.html %>
+</div>
+
+<script>
+    function showHidePwd () {
+        var passwordField = document.getElementById('password');
+        var passwordFieldType = passwordField.getAttribute('type');
+        var button=document.getElementById('showHideBtn')
+
+        if (passwordFieldType === 'text') {
+            passwordField.setAttribute('type', 'password');
+            button.textContent='Show';
+        }
+        else {
+            passwordField.setAttribute('type', 'text');
+            button.textContent='Hide';
+        }
+    }
+</script>

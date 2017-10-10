@@ -1,0 +1,17 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container">
+      <div class="signin-container container-flex" style="padding: 15px">
+        <div class="col-sm-6 col-md-5 col-lg-4 col-xs-12 ">
+          <div class="signin-form row">
+            <% include partials/logo.html %>
+            <h1>We're down.</h1>
+            <p>Snugg Pro is experiencing down time right now. We apologize for the interruption.</p>
+            <p>Please check back in a few minutes or <a href="javascript:void(0);" onclick="window.Intercom('showNewMessage')">talk to us</a> if you need immediate assistance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% include partials/anon-intercom.html %>
+  </body>
+</html>

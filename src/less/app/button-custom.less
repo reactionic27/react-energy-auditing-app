@@ -1,0 +1,66 @@
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+// http://codepen.io/mediaashley/pen/kLbGf
+
+.button-3d(@color; @background; @border) {
+  position:relative;
+  cursor:pointer;
+  color: @color;
+  background-color: @background;
+  background-image: 0;
+  box-shadow: 0px 1px 0px 0px darken(@background,25%), 0px 1px 2px #999999;
+
+  &:hover{
+    background-color: lighten(@background, 3%);
+    color: @color;
+    // top:1px;
+    // box-shadow: inset 0px 2px 0px darken(@background,10%), 0px 1px 0px 0px darken(@background,15%), 0px 1px 1px #999;
+
+  }
+  &:focus, &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-color: darken(@background, 10%);
+    color: @color;
+    top:1px;
+    box-shadow: inset 0px 0px 0px darken(@background,15%), 0px 1px 0px 0px darken(@background,20%), 0px 1px 1px #999;
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+
+  &:before {
+    display:block;
+    position:absolute;
+    padding-top:10px;
+    top:10px;
+    text-shadow: 1px 1px 2px darken(@background,10%);
+  } 
+  
+  &:active:before {
+  // top: 7px;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}

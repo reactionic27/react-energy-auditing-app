@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>templatesIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-459.000000, -201.000000)">
+            <g id="TemplatesIcon" transform="translate(463.000000, 204.000000)">
+                <path d="M0,4.99575199 C0,4.44581335 0.44921875,4 1.00877516,4 L38.9912248,4 C39.548356,4 40,4.45076883 40,4.99575199 L40,59.004248 C40,59.5541866 39.5507812,60 38.9912248,60 L1.00877516,60 C0.451644023,60 0,59.5492312 0,59.004248 L0,4.99575199 Z" id="Rectangle-2" fill="#FDD488"></path>
+                <path d="M4,0.995751992 C4,0.445813352 4.44921875,0 5.00877516,0 L42.9912248,0 C43.548356,0 44,0.450768828 44,0.995751992 L44,55.004248 C44,55.5541866 43.5507812,56 42.9912248,56 L5.00877516,56 C4.45164402,56 4,55.5492312 4,55.004248 L4,0.995751992 Z" id="Rectangle-2" fill="#FEE2A7"></path>
+                <g id="Group-11" transform="translate(29.000000, 48.000000) rotate(45.000000) translate(-29.000000, -48.000000) translate(26.000000, 24.000000)">
+                    <rect id="Rectangle-19" fill="#EBC186" x="-2.13162821e-14" y="-2.66453526e-14" width="6" height="48" rx="1"></rect>
+                    <path d="M-2.13162821e-14,0.997030139 C-2.13162821e-14,0.446385598 0.45097518,-2.66453526e-14 0.990777969,-2.66453526e-14 L5.00922203,-2.66453526e-14 C5.55641359,-2.66453526e-14 6,0.453036308 6,0.997030139 L6,8 L-2.13162821e-14,8 L-2.13162821e-14,0.997030139 Z" id="Rectangle-19" fill="#DBAD6E"></path>
+                </g>
+                <g id="Group-13" transform="translate(26.000000, 15.000000)">
+                    <g id="Group-12" transform="translate(17.000000, 0.000000)" fill="#DBAD6E">
+                        <rect id="Rectangle-20" x="0" y="0" width="2" height="4" rx="1"></rect>
+                        <rect id="Rectangle-20" x="0" y="32" width="2" height="4" rx="1"></rect>
+                    </g>
+                    <g id="Group-12" transform="translate(18.000000, 18.000000) rotate(90.000000) translate(-18.000000, -18.000000) translate(17.000000, 0.000000)" fill="#EBC186">
+                        <rect id="Rectangle-20" x="0" y="0" width="2" height="4" rx="1"></rect>
+                        <path d="M-3.99680289e-15,33.0093689 C-4.30008485e-15,32.4519098 0.443864822,32 1,32 L1,32 C1.55228475,32 2,32.4433532 2,33.0093689 L2,34.9906311 C2,35.5480902 1.55613518,36 1,36 L1,36 C0.44771525,36 -2.61097294e-15,35.5566468 -2.91891011e-15,34.9906311 L-3.99680289e-15,33.0093689 Z" id="Rectangle-20"></path>
+                    </g>
+                </g>
+                <g id="Group-13" transform="translate(48.250000, 25.638784) rotate(30.000000) translate(-48.250000, -25.638784) translate(30.250000, 16.138784)">
+                    <g id="Group-12" transform="translate(17.000000, -0.000000)" fill="#EBC186">
+                        <rect id="Rectangle-20" x="0" y="0" width="2" height="4" rx="1"></rect>
+                    </g>
+                    <g id="Group-12" transform="translate(18.000000, 18.000000) rotate(90.000000) translate(-18.000000, -18.000000) translate(17.000000, -0.000000)" fill="#DBAD6E">
+                        <rect id="Rectangle-20" x="2.84217094e-14" y="1.42108547e-14" width="2" height="4" rx="1"></rect>
+                        <path d="M5.99520433e-14,33.0093689 C5.96487614e-14,32.4519098 0.443864822,32 1,32 L1,32 C1.55228475,32 2,32.4433532 2,33.0093689 L2,34.9906311 C2,35.5480902 1.55613518,36 1,36 L1,36 C0.44771525,36 6.13378733e-14,35.5566468 6.10299361e-14,34.9906311 L5.99520433e-14,33.0093689 Z" id="Rectangle-20"></path>
+                    </g>
+                </g>
+                <g id="Group-13-Copy" transform="translate(51.361216, 28.750000) rotate(60.000000) translate(-51.361216, -28.750000) translate(33.361216, 19.250000)">
+                    <g id="Group-12" transform="translate(17.000000, -0.000000)" fill="#DBAD6E">
+                        <rect id="Rectangle-20" x="-1.77635684e-13" y="-3.62376795e-13" width="2" height="4" rx="1"></rect>
+                    </g>
+                    <g id="Group-12" transform="translate(18.000000, 18.000000) rotate(90.000000) translate(-18.000000, -18.000000) translate(17.000000, -0.000000)" fill="#EBC186">
+                        <rect id="Rectangle-20" x="-1.81188398e-13" y="-8.52651283e-14" width="2" height="4" rx="1"></rect>
+                        <path d="M2.44249065e-14,33.0093689 C2.41216246e-14,32.4519098 0.443864822,32 1,32 L1,32 C1.55228475,32 2,32.4433532 2,33.0093689 L2,34.9906311 C2,35.5480902 1.55613518,36 1,36 L1,36 C0.44771525,36 2.58107365e-14,35.5566468 2.55027993e-14,34.9906311 L2.44249065e-14,33.0093689 Z" id="Rectangle-20"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

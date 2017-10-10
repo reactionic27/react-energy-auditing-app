@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>co2TesterIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="12" cy="12" r="12"></circle>
+        <path d="M9.88916171,9.99754465 C9.95037601,9.44661595 10.4509752,9 10.990778,9 L15.009222,9 C15.5564136,9 15.9504098,9.4463114 15.8891617,9.99754465 L15.1108383,17.0024554 C15.049624,17.553384 14.5490248,18 14.009222,18 L9.99077797,18 C9.44358641,18 9.04959016,17.5536886 9.11083829,17.0024554 L9.88916171,9.99754465 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6.79087415" height="9" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <path d="M18.8891617,9.99754465 C18.950376,9.44661595 19.4509752,9 19.990778,9 L24.009222,9 C24.5564136,9 24.9504098,9.4463114 24.8891617,9.99754465 L24.1108383,17.0024554 C24.049624,17.553384 23.5490248,18 23.009222,18 L18.990778,18 C18.4435864,18 18.0495902,17.5536886 18.1108383,17.0024554 L18.8891617,9.99754465 Z" id="path-5"></path>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6.79087415" height="9" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <path d="M27.8891617,9.99754465 C27.950376,9.44661595 28.4509752,9 28.990778,9 L33.009222,9 C33.5564136,9 33.9504098,9.4463114 33.8891617,9.99754465 L33.1108383,17.0024554 C33.049624,17.553384 32.5490248,18 32.009222,18 L27.990778,18 C27.4435864,18 27.0495902,17.5536886 27.1108383,17.0024554 L27.8891617,9.99754465 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6.79087415" height="9" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-750.000000, -93.000000)">
+            <g id="Group-16" transform="translate(758.000000, 95.000000)">
+                <path d="M0,4.00281647 C0,1.79212198 1.79125179,0 4.00811116,0 L37.9918888,0 C40.2055075,0 42,1.79793835 42,4.00281647 L42,25 L42,56.0021074 C42,58.2100825 40.2087482,60 37.9918888,60 L4.00811116,60 C1.79449249,60 0,58.2162267 0,56.0021074 L0,25 L0,4.00281647 Z" id="Rectangle-22" fill="#FEE2A7"></path>
+                <rect id="Rectangle-23" fill="#EBC186" x="5" y="6" width="32" height="14" rx="0.5"></rect>
+                <g id="Group-5" transform="translate(21.000000, 40.000000) rotate(30.000000) translate(-21.000000, -40.000000) translate(9.000000, 28.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FDD488" xlink:href="#path-1"></use>
+                    <g mask="url(#mask-2)" id="Rectangle-25">
+                        <g transform="translate(9.000000, 0.000000)">
+                            <rect fill="#FEE2A7" x="0" y="0" width="3" height="24"></rect>
+                            <rect fill="#EBC186" x="3" y="8.52651283e-14" width="3" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+                <circle id="Oval-5" fill="#EBC186" cx="21" cy="25" r="1"></circle>
+                <circle id="Oval-5" fill="#EBC186" transform="translate(28.500000, 27.009619) rotate(30.000000) translate(-28.500000, -27.009619) " cx="28.5" cy="27.0096189" r="1"></circle>
+                <circle id="Oval-5" fill="#EBC186" transform="translate(33.990381, 32.500000) rotate(60.000000) translate(-33.990381, -32.500000) " cx="33.9903811" cy="32.5" r="1"></circle>
+                <circle id="Oval-5-Copy" fill="#EBC186" transform="translate(8.009619, 32.500000) rotate(120.000000) translate(-8.009619, -32.500000) " cx="8.00961894" cy="32.5" r="1"></circle>
+                <circle id="Oval-5-Copy" fill="#EBC186" transform="translate(13.500000, 27.009619) rotate(150.000000) translate(-13.500000, -27.009619) " cx="13.5" cy="27.0096189" r="1"></circle>
+                <use id="Rectangle-26" stroke="#FDD488" mask="url(#mask-4)" stroke-width="4" xlink:href="#path-3"></use>
+                <rect id="Rectangle-27" fill="#EBC186" x="10.5" y="13" width="4" height="1" rx="0.5"></rect>
+                <use id="Rectangle-26" stroke="#FDD488" mask="url(#mask-6)" stroke-width="4" xlink:href="#path-5"></use>
+                <rect id="Rectangle-27" fill="#EBC186" x="19.5" y="13" width="4" height="1" rx="0.5"></rect>
+                <use id="Rectangle-26" stroke="#FDD488" mask="url(#mask-8)" stroke-width="4" xlink:href="#path-7"></use>
+                <rect id="Rectangle-27" fill="#EBC186" x="28.5" y="13" width="4" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-29" fill="#EBC186" x="20" y="61" width="2" height="7" rx="1"></rect>
+                <rect id="Rectangle-30" fill="#EBC186" x="21" y="66" width="34" height="2" rx="1"></rect>
+                <path d="M19,56.0029293 C19,55.4490268 19.4433532,55 20.0093689,55 L21.9906311,55 C22.5480902,55 23,55.4378814 23,56.0029293 L23,59.9940809 C23,61.1019194 22.1122704,62 21,62 L21,62 C19.8954305,62 19,61.1134452 19,59.9940809 L19,56.0029293 Z" id="Rectangle-28" fill="#EBC186"></path>
+                <path d="M18,60 L24,60 L24,61 C24,61.5522847 23.5490248,62 23.009222,62 L18.990778,62 C18.4435864,62 18,61.5561352 18,61 L18,60 Z" id="Rectangle-28" fill="#FDD488"></path>
+                <path d="M53.5,18.4912569 C53.5,17.6676585 54.1657972,17 55,17 L55,17 C55.8284271,17 56.5,17.6688281 56.5,18.4912569 L56.5,43 L53.5,43 L53.5,18.4912569 Z" id="Rectangle-32" fill="#FDD488"></path>
+                <rect id="Rectangle-34" fill="#EBC186" x="54" y="43" width="2" height="25" rx="1"></rect>
+                <rect id="Rectangle-35" fill="#FDD488" x="55" y="43" width="1" height="25" rx="0.5"></rect>
+                <path d="M52,21 L58,21 L58,42.0089096 C58,43.6608432 56.6534829,45 55,45 L55,45 C53.3431458,45 52,43.6582294 52,42.0089096 L52,21 Z" id="Rectangle-31" fill="#E8B773"></path>
+                <rect id="Rectangle-33" fill="#DBAD6E" x="51" y="21" width="8" height="2" rx="1"></rect>
+                <path d="M20,67.5 C20,67.2238576 20.2298889,67 20.5089073,67 L55.4910927,67 C55.7721544,67 56,67.2319336 56,67.5 L56,67.5 C56,67.7761424 55.7701111,68 55.4910927,68 L20.5089073,68 C20.2278456,68 20,67.7680664 20,67.5 L20,67.5 Z" id="Rectangle-30" fill="#FDD488"></path>
+            </g>
+        </g>
+    </g>
+</svg>

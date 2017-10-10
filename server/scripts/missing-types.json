@@ -1,0 +1,49 @@
+{
+  "missingFiles": [
+    "customRecommendations"
+  ],
+  "missingFields": [
+    {
+      "collectionName": "wall",
+      "missingFields": [
+        "Wall Cavity Insulation Type",
+        "Wall Continuous Insulation Type"
+      ]
+    },
+    {
+      "collectionName": "attic",
+      "missingFields": [
+        "Knee Wall Insulation Type",
+        "Knee Wall Continuous Insulation Type"
+      ]
+    },
+    {
+      "collectionName": "cazSystem",
+      "missingFields": [
+        "function CAZAppliance$nZoneNumber(row, state) {\n      return _lodash2.default.findIndex(state.caz, function (caz) {\n        return caz.uuid === row.caz_uuid;\n      }) + 1;\n    }",
+        "function CAZAppliance$nEquipmentName(row, state) {\n      if (row.hvac_uuid) {\n        return _lodash2.default.get(state.hvac.find(function (hvac) {\n          return hvac.uuid === row.hvac_uuid;\n        }), 'hvac_system_name');\n      }\n      if (row.dhw_uuid) {\n        return 'Dhw ' + (_lodash2.default.findIndex(state.dhw, function (dhw) {\n          return dhw.uuid === row.dhw_uuid;\n        }) + 1);\n      }\n      if (row.oven_uuid) return 'Oven';\n      if (row.range_uuid) return 'Range';\n      if (row.clothes_dryer_uuid) return 'Clothes Dryer';\n    }"
+      ]
+    }
+  ],
+  "missingType": [
+    {
+      "collectionName": "freezer",
+      "missingType": [
+        "Freezer Name",
+        "Freezer Model"
+      ]
+    },
+    {
+      "collectionName": "dhw",
+      "missingType": [
+        "DHW Model"
+      ]
+    },
+    {
+      "collectionName": "caz",
+      "missingType": [
+        "CAZ Name"
+      ]
+    }
+  ]
+}

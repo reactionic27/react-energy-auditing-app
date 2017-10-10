@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>inputIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-401.000000, -447.000000)">
+            <g id="Group-18" transform="translate(413.000000, 447.000000)">
+                <path d="M2,9.00528717 C2,8.4500824 2.44453073,8 3.00254822,8 L48.9974518,8 C49.5511439,8 50,8.44286251 50,9.00528717 L50,70.9947128 C50,71.5499176 49.5554693,72 48.9974518,72 L3.00254822,72 C2.44885613,72 2,71.5571375 2,70.9947128 L2,9.00528717 Z" id="Rectangle-2" fill="#FDD488"></path>
+                <path d="M0,7.00528717 C0,6.4500824 0.444530725,6 1.00254822,6 L46.9974518,6 C47.5511439,6 48,6.44286251 48,7.00528717 L48,68.9947128 C48,69.5499176 47.5554693,70 46.9974518,70 L1.00254822,70 C0.448856126,70 0,69.5571375 0,68.9947128 L0,7.00528717 Z" id="Rectangle-2" fill="#FEE2A7"></path>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="22" width="22" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="25" width="16" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-5" fill="#FFFFFF" x="7" y="20" width="8" height="8" rx="0.5"></rect>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="38" width="22" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="41" width="16" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-5" fill="#FFFFFF" x="7" y="36" width="8" height="8" rx="0.5"></rect>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="54" width="22" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-3" fill="#EBC186" x="19" y="57" width="16" height="1" rx="0.5"></rect>
+                <rect id="Rectangle-5" fill="#FFFFFF" x="7" y="52" width="8" height="8" rx="0.5"></rect>
+                <path d="M19,3 L12.9970047,3 C11.8949789,3 11,3.89458045 11,4.99810135 L11,11 L37,11 L37,4.99810135 C37,3.88670635 36.1059106,3 35.0029953,3 L30,3 L30,1.99791312 C30,0.898260623 29.1081436,0 28.007983,0 L20.992017,0 C19.9001762,0 19,0.894496173 19,1.99791312 L19,3 Z" id="Combined-Shape" fill="#EBC186"></path>
+                <rect id="Rectangle-42" fill="#E8B773" x="11" y="7" width="26" height="4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

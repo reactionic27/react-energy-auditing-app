@@ -1,0 +1,100 @@
+<%# SHARED HEADER %>
+<%# http://webdesign.tutsplus.com/articles/creating-a-simple-responsive-html-email--webdesign-12978 %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SnuggPro Notification</title>
+    <style type="text/css">
+    body {margin: 0; padding: 0; min-width: 100%!important;}
+    img {height: auto;}
+    @media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+    body[yahoo] .hide {display: none!important;}
+    body[yahoo] .buttonwrapper {background-color: transparent!important;}
+    body[yahoo] .button {padding: 0px!important;}
+    body[yahoo] .button a {background-color: #e05443; padding: 15px 15px 13px!important;}
+    body[yahoo] .unsubscribe {display: block; margin-top: 20px; padding: 10px 50px; background: #2f3942; border-radius: 5px; text-decoration: none!important; font-weight: bold;}
+    }
+    /*@media only screen and (min-device-width: 601px) {
+      .content {width: 600px !important;}
+      .col425 {width: 425px!important;}
+      .col380 {width: 380px!important;}
+      }*/
+    </style>
+  </head>
+
+  <body yahoo bgcolor="#ECEBE8">
+    <table width="100%" bgcolor="#ECEBE8" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <!--[if (gte mso 9)|(IE)]>
+          <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td>
+        <![endif]-->
+        <table bgcolor="#ffffff" class="content" style="width: 100%; max-width: 600px; margin: 40px auto; box-shadow: 0px 0px 10px rgba(0,0,0,0.2);" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td bgcolor="#ffffff" class="header" style="padding: 40px 30px 10px 30px;">
+              <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="50" style="margin: 0 auto; text-align: center" align="center">
+                    <a href="http://snuggpro.com"><img class="fix" src="https://app.snuggpro.com/img/sp-logo.png" width="200" height="45" border="0" alt="" /></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="innerpadding" style="padding: 0 30px 30px 30px;">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="bodycopy" style="font-size: 16px; line-height: 22px;">
+<%- body %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="bodycopy" style="font-size: 16px; line-height: 22px;">
+                    <p> <em> - The Snugg Pro team </em> </p>
+                    <br/>
+
+                    <p> <strong>Email: </strong>pro@snugghome.com </p>
+
+                    <p><strong>Mailing Address</strong>
+                    Snugg Home <br/>
+                    PO BOX 82 <br/>
+                    Boulder, CO 80306 <br/>
+                    Website: http://SnuggPro.com
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="footer" align="center" bgcolor="#F2F1EF" style="padding: 20px 10px 20px 10px; text-align: center;">
+              <a href="http://snuggpro.com" style="color: #333; padding: 5px;">
+                Website
+              </a>
+              <a href="http://support.snuggpro.com" style="color: #333; padding: 5px;">
+                Support
+              </a>
+              <a href="http://www.facebook.com/snugghome" style="color: #333; padding: 5px;">
+                Facebook
+              </a>
+              <a href="http://www.twitter.com/snugghome" style="color: #333; padding: 5px;">
+                Twitter
+              </a>
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+              </td>
+            </tr>
+        </table>
+        <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

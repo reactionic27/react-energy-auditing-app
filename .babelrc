@@ -1,0 +1,94 @@
+{
+  "env": {
+    // This .babelrc file is used by the server, the webpack.config.js is used for the client
+    "server_development": {
+      "presets": ["react"],
+      "plugins": [
+
+        // ES2015
+        "transform-es2015-modules-commonjs",
+
+        // Stage 3:
+        "transform-async-to-generator",
+        "transform-exponentiation-operator",
+
+        // Stage 2:
+        "syntax-trailing-function-commas",
+        "transform-object-rest-spread",
+
+        // Stage 1:
+        "transform-class-constructor-call",
+        "transform-class-properties",
+        "syntax-class-properties",
+        "transform-export-extensions",
+
+        // React Specific:
+        "syntax-flow",
+        "syntax-jsx",
+        "transform-flow-strip-types",
+
+        "typecheck",
+      ]
+    },
+    "server_production": {
+      "presets": ["react"],
+      "plugins": [
+
+        // ES2015
+        "transform-es2015-modules-commonjs",
+
+        // Stage 3:
+        "transform-async-to-generator",
+        "transform-exponentiation-operator",
+
+        // Stage 2:
+        "syntax-trailing-function-commas",
+        "transform-object-rest-spread",
+
+        // Stage 1:
+        "transform-class-constructor-call",
+        "transform-class-properties",
+        "syntax-class-properties",
+        "transform-export-extensions",
+        // React Specific:
+        "syntax-flow",
+        "syntax-jsx",
+        "transform-flow-strip-types"
+      ]
+    },
+    "client_development": {
+      "presets": ["es2015", "stage-0", "react"],
+      "plugins": [
+        "transform-decorators-legacy",
+        // "react-hot-loader/babel"
+        ["react-transform", {
+          "transforms": [{
+            "transform": "react-transform-hmr",
+            "imports": ["react"],
+            "locals": ["module"]
+          }, {
+            "transform": "react-transform-catch-errors",
+            "imports": ["react", "redbox-react"]
+          }]
+        }],
+        "typecheck"
+      ],
+    },
+    "client_production": {
+      "presets": ["es2015", "stage-0", "react"],
+      "plugins": [
+        "transform-decorators-legacy"
+      ],
+    },
+   "api_test": {
+      "presets": ["es2015", "stage-0"]
+    },
+    "client_test": {
+      "presets": ["es2015", "stage-0", "react"],
+      "plugins": [
+        "transform-decorators-legacy",
+        "typecheck"
+      ],
+    },
+  }
+}

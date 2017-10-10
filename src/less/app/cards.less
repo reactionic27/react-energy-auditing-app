@@ -1,0 +1,244 @@
+/// -----------------  Financing settings ----------- ///
+@cardBorderRadius: 4px;
+@cardBoxShadow: 0 2px 8px fade(@custom-color-1, 20%);
+
+.cards{
+  .clearfix();
+  margin-bottom: 30px;
+  .cards-row{
+    .clearfix();
+  }
+  .card{
+    display: inline-block;
+    vertical-align: bottom;
+    width: 250px;
+    margin-right: 20px;
+    margin-top: 20px;
+    float:left;
+    border-radius: @cardBorderRadius;
+    background-color: white;
+    border: solid 1px darken(@custom-color-3, 5%);
+    color: inherit;
+    position: relative;
+    &:after
+    {
+    	content:"";
+        position:absolute;
+        z-index:-1;
+        .box-shadow(@cardBoxShadow);
+        bottom:0;
+        left:10px;
+        right:10px;
+        height: 50%;
+        width: auto;
+    }
+    &:hover, &:focus{
+      transition: all .30s ease;
+      .box-shadow(@cardBoxShadow);
+      &:after  {
+        transition: all .30s ease;
+        .box-shadow(0 5px 12px fade(@custom-color-1, 35%));
+
+      }
+    }
+    &:active{
+      &:after  {
+        transition: none;
+        .box-shadow(0 12px 22px fade(@custom-color-1, 20%));
+      }
+    }
+
+    &.card-fluid{
+      width: 100%;
+    }
+    table.table{
+      margin-bottom: 3px;
+      tr:first-child td{
+        border-top: none;
+      }
+      td{
+        padding: 10px 3px;
+        &:nth-child(2){
+          text-align: right;
+        }
+      }
+      &.table-striped td{
+        border-color: #E3E3E3;
+      }
+    }
+    ul {
+      margin:0;
+      padding-left: 0;
+      li{
+        font-size: .9em;
+        list-style-type: none;
+        padding: 10px 3px;
+        margin: 0 12px;
+        border-bottom: 1px solid #ddd;
+        &:last-child{
+          border-bottom: none;
+        }
+        .value{
+          float:right;
+        }
+      }
+    }
+    &.card-readonly{
+      &:hover, &:focus{
+        .box-shadow(none);
+        &:after  {
+          .box-shadow(0 4px 12px fade(@custom-color-1, 20%));
+        }
+      }
+      &:active{
+        &:after  {
+          .box-shadow(0 4px 12px fade(@custom-color-1, 20%));
+        }
+      }
+    }
+    &.card-rec{
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+      margin-top: 0;
+      cursor: pointer;
+
+      &:first-child{
+        border-top-width: 1px;
+      }
+      &:hover{
+        z-index: 2;
+        .box-shadow(0 0 10px fade(@custom-color-1, 30%));
+      }
+      &:active{
+        z-index: 3;
+        transition: none;
+        .box-shadow(0 1px 14px fade(@custom-color-1, 40%));
+        &:after  {
+          z-index: 4;
+        }
+      }
+    }
+    .card-rec-header{
+      background-color: darken(@custom-color-3, 2%);
+      color: darken(@custom-color-3, 60%);
+      height: 65px;
+    }
+    .card-header{
+      .clearfix();
+      display: block;
+      position: relative;
+      border-radius: 0 !important;
+      padding: 15px 10px;
+      background-color: darken(@custom-color-3, 2%);
+      text-align: center;
+      color: darken(@custom-color-3, 60%);
+      max-width: 100%;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      line-height: 1em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      font-weight: 400;
+      [class*=" ico-"], [class^="ico-"]{
+        display: block;
+        background-color: inherit;
+        margin-left: 8px;
+        opacity: 0.7;
+        float:right;
+      }
+    }
+    a.card-header{
+      color: inherit;
+      &:hover{
+        cursor: pointer;
+        background: darken(@custom-color-3, 5%);
+      }
+      &:active{
+        background: darken(@custom-color-3, 8%);
+      }
+    }
+
+    .card-body{ // Only use this if you have content that needs padding and c.  ULs and tables are already padded.
+      .clearfix();
+      padding: 10px 8px;
+    }
+    .card-footer{
+      .clearfix();
+      padding: 12px 10px 0px;
+      background-color: @custom-color-3;
+      position: relative;
+      .card-footer-content{
+        float:left;
+        max-width: 190px;
+        max-height: 20px;
+        margin-bottom: 10px;
+        overflow: hidden;
+
+      }
+      // trash button
+      .card-delete{
+        display:inline;
+        font-size:16px;
+        color: red;
+        margin-left: 10px;
+        margin-top: -10px;
+        margin-right: -11px;
+        border-radius: 0 0 6px 0;
+        padding: 12px 15px;
+        &:hover{
+          color: #fff;
+          background-color: red;
+        }
+        &:active{
+          color: #fff;
+          background-color: darken(red, 7%);
+        }
+      }
+    }
+    // Style calculator on financing selection screen
+    &.card-calculator{
+      float:none;
+      .input-group-addon{
+        padding: 6px;
+      }
+    }
+  }
+}
+
+// ====================  RESPONSIVE TWEAKS ======================
+// Mobile first!
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .cards{
+    .card{
+      &.card-rec{
+        margin-bottom: 1px;
+        // border-top: solid 1px darken(@custom-color-3, 5%);
+        border-radius: 0;
+        border:none;
+        background-color: @custom-color-3;
+        &:nth-child(even){
+          background-color: lighten(@custom-color-3, 2%);
+        }
+        &:first-child{
+          border-radius: 6px 6px 0 0
+        }
+        &:last-child{
+          border-radius: 0 0 6px 6px;
+        }
+      }
+      .card-rec-header{
+        background-color: inherit;
+        text-align: inherit;
+        color: inherit;
+        height: auto;
+
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) {
+}

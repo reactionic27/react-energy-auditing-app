@@ -1,0 +1,76 @@
+// #####################################################
+// ###############     THEME MIXIN        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@color-1: #DAE8CC;
+@color-2: darken(@color-1, 62%);
+@color-3: desaturate(lighten(@color-1, 5%), 2%);
+
+.theme(@color-1, @color-2, @color-3){
+  .theme-swatch{
+    .theme-colors(@color-1, @color-2);
+  }
+  .report-page {
+    .report-logo{
+      h2{
+        background-color: lighten(@color-1, 11%);
+      }
+    }
+    .report-sidebar {
+      background-color: @color-1;
+    } // report-sidebar
+    .report-photo-row{
+        background-color: @color-3;
+    }
+
+    //- ================ Cover page styling =================
+    .intro-cover .toc {
+      background-color: @color-2;
+      color: @color-1;
+      .toc-title{
+        color:@report-color-7;
+      }
+    } // report-page-cover
+
+    //- =================== Recommendations (solutions) list page styling =======================
+    &.report-page-solutions{
+      .report-main{
+        h2{
+          background-color: @color-2 !important;
+          color: @report-color-7;
+        }
+      }
+    } // report-page-solutions
+
+
+    //- =================== Health and safety tests page  =======================
+    &.report-page-health{
+      .report-sidebar{
+        .safety-tests-results {
+          li{
+            &:nth-child(odd){
+              background-color:  darken(@color-1, 5%);
+            }
+          }
+        }
+      }
+    } // report-page-safety
+
+    //- =================== Additional notes page =======================
+    &.report-page-additional_notes{
+      .report-sidebar{
+        border-color: @color-1;
+        background-color: white;
+        border-width: 1px;
+        border-style: solid;
+        box-sizing: border-box;
+      }
+    } // report-page-additional_notes
+
+    //- =================== Glossary page =======================
+    &.report-page-glossary{
+    }
+  } // report-page
+}

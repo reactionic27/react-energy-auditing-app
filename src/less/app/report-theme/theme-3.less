@@ -1,0 +1,18 @@
+// #####################################################
+// ##############     ARTIC BLUE        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@theme-3-color-1: #DDE6EA;
+@theme-3-color-2: darken(@theme-3-color-1, 62%);
+
+.theme-swatch-3{
+  .theme-colors(@theme-3-color-1, @theme-3-color-2);
+}
+.theme-3 {
+  @color-1: @theme-3-color-1;
+  @color-2: @theme-3-color-2;
+  // Specify @color-3 if necessary
+  .theme(@color-1, @color-2, @color-3);
+}

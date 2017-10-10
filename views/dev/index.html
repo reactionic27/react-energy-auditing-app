@@ -1,0 +1,25 @@
+<% include partials/head.html %>
+  <body>
+    <div id="primary-container"></div>
+    <script type="text/javascript">
+    var UPLOADCARE_MANUAL_START = true;
+    </script>
+    <% if (env === 'production') { %>
+    <script src="/src/raven.js"></script>
+    <script type="text/javascript">
+    Raven.config(
+      'https://9d7272f965af485aae3585a150e76152@app.getsentry.com/79871'
+    ).install()
+    </script>
+    <% } else { %>
+    <script src="/src/raven-mock.js"></script>
+    <% } %>
+    <script src="/src/uploadcare.js"></script>
+    <script src="/src/<%- paths.app %>"></script>
+    <script type="text/javascript">
+    snuggApp(<%- bootstrapped %>, <%- account.id || null %>)
+    </script>
+    <script src="https://js.stripe.com/v2/"></script>
+    <meta name="buildId" id="buildId"  content="<%- buildId %>">
+  </body>
+</html>

@@ -1,0 +1,306 @@
+// Pad screens for fixed header in the job section
+.job-container{
+  padding-top: 91px;
+  padding-bottom: 500px;
+}
+
+// For collection sets like Attics and Vaults one below the other
+.collection-set{
+  padding-bottom: 20px;
+}
+
+// For collections like window systems
+.collection{
+  padding-bottom: 20px;
+  +.collection{
+    border-top: 1px solid darken(@custom-color-3, 7%);
+    padding-top: 20px;
+  }
+}
+
+// This is needed b/c we are absolutely positioning our tooltips as a child of this el
+.input-group {
+  position: relative;
+  &.deletable{
+    display: block;
+    select{
+      max-width: 76%;
+      // min-width: 70%;
+      width: auto;
+    }
+  }
+  // This needs to be inline for popover positioning. When measuring the
+  // popover's sibling's width it will be full-page width unless it's display:inline
+  .popover-sibling {
+    display: inline
+  }
+}
+.delete-job-row{
+  float: right;
+  display: inline-block;
+  color: red;
+  margin-left: 16px;
+  padding: 12px 16px;
+  font-size:16px;
+  border-radius: 3px;
+  background: inherit;
+  border:none;
+  &:hover{
+    color: #fff;
+    background-color: red;
+  }
+  &:active{
+    color: #fff;
+    background-color: darken(red, 7%);
+
+  }
+
+}
+
+// Used for the refrigerator and similar tables
+// where items are added/removed.
+.table-control-group {
+  &.jobform-refrigerator table{
+    // width: 470px;
+    td:last-child{
+      position: relative;
+      padding-right: 10px;
+    }
+  }
+  &.jobform-windows{
+    .table > tbody > tr > td{
+      border-top: none;
+      padding: 8px 4px
+    }
+  }
+  .control-label {
+    padding-top: 50px;
+    span {
+      display: block;
+      padding-top: 46px;
+    }
+  }
+
+  .css-delete-row {
+    position: absolute;
+  }
+
+  table {
+    // width: 260px;
+    margin-bottom: 10px;
+  }
+  .delete-job-row{
+    position: absolute;
+    display: block;
+    float: left;
+    top: 3px;
+    right: -45px;
+  }
+}
+
+// ================== Utility timeline =============
+.date-difference{
+  float:right;
+  margin-top: -95px;
+  padding: 3px;
+  border-radius: 10px;
+  width: 67px;
+  border: solid 1px darken(@custom-color-3, 8%);
+  border: none;
+  .box-shadow(0px 1px 1px rgba(0,0,0,0.3));
+  display: block;
+  position: relative;
+  z-index: 2;
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin: auto;
+    width: 1px;
+    height: 145px;
+    border-left: 1px dotted #aaa;
+  }
+  &:after{
+    content: "\25CB"; //"\25CB"; //"\25C2"; // "\29BF";
+    display: block;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 90px;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 7px;
+    height: 10px;
+    width: 15px;
+    color: @gray;
+    background-color: white;
+  }
+  &.label{
+    background-color: @custom-color-3;
+  }
+  &.label-warning{
+    background-color: #F7EFD3;
+    color: darken(#F7EFD3, 70%);
+    border-color: darken(#F7EFD3, 10%);
+  }
+  &.label-error{
+    background-color: #F1E3E3;
+    color: #B21212;
+    border-color: darken(#9F1717, 10%);
+  }
+  &.date-difference-start{
+    content: "";
+    margin-top: 0;
+    border: none;
+    .box-shadow(none);
+    &:before{
+      top: 30px;
+      height: 50px;
+    }
+    &:after{
+      content: "\29BF"; //"\25CB"; //"\25C2"; // "\29BF";
+      top: 47px;
+    }
+  }
+  &.date-difference-end{
+    content: "";
+    border: none;
+    .box-shadow(none);
+    &:before{
+      top:17px;
+      height: 20px;
+    }
+    &:after{
+      content: "\29BF"; //"\25CB"; //"\25C2"; // "\29BF";
+      // top: 47px;
+    }
+  }
+}
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+
+@media (max-width: @screen-xs-max) {
+  .push-left{
+    .scroll-spy-clicked, &.scroll-spy{
+      left: @side-left-width;
+      right: -@side-left-width;
+      .transition(@push-menu-transition);
+    }
+  }
+  .form-group-utility-date:last-child{
+    .date-difference{
+      &:before{
+        height: 80px;
+      }
+    }
+  }
+}
+
+// Up to small devices
+@media(max-width: @screen-sm-max){
+  // Make multiple columns of fields more compact to render better on narrow displays
+  .form-group-narrow  {
+    .input-lg, input.form-control{
+      padding-left: 8px;
+      padding-right: 5px;
+    }
+    .input-group-addon{
+      min-width: 20px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .btn-group > .btn{
+      padding-left: 9px;
+      padding-right: 9px;
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .push-left{
+    .scroll-spy-clicked, .scroll-spy{
+      left: @side-left-width;
+      right: -@side-left-width;
+      .transition(@push-menu-transition);
+    }
+  }
+  .scroll-spy-clicked, .scroll-spy{
+    left: @side-left-width;
+    .transition(@push-menu-transition);
+
+  }
+  .delete-job-row{
+    float:none;
+  }
+  .job-container{
+    padding-top: 46px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .date-difference{
+    margin-top: -30px;
+    .box-shadow(0px 1px 1px rgba(0,0,0,0.3));
+    &:before{
+      left: 0;
+      right: 0;
+      top: 18px;
+      height: 75px;
+    }
+    &:after{
+      left: 0;
+      right:0;
+      top: 90px;
+      bottom: 0;
+      height: 10px;
+    }
+    &.date-difference-start{
+      margin-top: 0;
+      &:before{
+        top: 30px;
+        height: 50px;
+      }
+      &:after{
+        content: "\29BF"; //"\25CB"; //"\25C2"; // "\29BF";
+        top: 47px;
+      }
+    }
+    &.date-difference-end{
+      &:before{
+        top:16px;
+        height: 30px;
+      }
+    }
+  }
+
+
+}
+
+@media (max-height: @short-screen-max) {
+  .push-left{
+    .scroll-spy-clicked, .scroll-spy{
+      left: @side-left-width-short;
+      right: -@side-left-width-short;
+      .transition(@push-menu-transition);
+    }
+  }
+}
+
+@media (max-height: @short-screen-max) and (min-width: @screen-sm-min) {
+  .scroll-spy-clicked, .scroll-spy{
+    left: @side-left-width-short;
+    right: -@side-left-width-short;
+    .transition(@push-menu-transition);
+  }
+}

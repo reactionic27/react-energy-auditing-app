@@ -1,0 +1,189 @@
+@border-color: #CDCDCD;
+@rec-row-height: 62px;
+
+.rec-content {
+  .add-rec{
+    margin: 20px 0 25px;
+  }
+  .nav-tabs > li.active > a {
+    background-color: #F4F4F4;
+  }
+  .rec-row {
+    .clearfix();
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    border: 1px solid darken(@custom-color-3, 3%);
+    border-radius: 0;
+    font-size: 1em;
+    margin-bottom: 10px;
+    background-color: @custom-color-3;
+    &.rec-header {
+      min-height: 20px;
+      height: 20px;
+      padding: 0 8px;
+      text-align: center;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      border:none;
+      background-color: white;
+      .span-rec{
+        padding-top: 0;
+        padding-bottom: 5px;
+        text-align: right;
+        &.span-cost{
+          text-align: center;
+        }
+      }
+      .span-accept{
+        text-align: left;
+      }
+    }
+    &.new-rec-row {
+      border: 1px dashed @border-color;
+      .custom-rec-name {
+        color: #222;
+        font-weight: 700;
+      }
+    }
+  }
+  .btn-go{
+    height: @rec-row-height;
+    border-radius: 0;
+    font-size: 18px;
+    padding-top: 23px;
+    border-top-right-radius: 4px;
+  }
+  .span-rec{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    .span-label{
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      color: @gray;
+    }
+  }
+  .span-rec-reveal {
+  }
+  .span-rec-name {
+    display: block;
+    font-weight: 600;
+    padding-top: 15px;
+    color: @custom-color-1;
+    .span-rec-title{
+      font-size: .9em;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+    .notes-label {
+      font-size: .9em;
+    }
+    .general-label {
+      margin: 0;
+    }
+  }
+  .span-cost {
+    .span-label{
+      padding-right: 10px;
+      text-align: left;
+    }
+    width: 45%;
+    float:left;
+    text-align: right;
+    padding-right: 5px;
+    input {
+      text-align: right;
+    }
+  }
+  .span-savings {
+    width: 25%;
+    text-align: right;
+    float:left;
+    padding-right: 10px;
+  }
+  .span-sir {
+    width: 25%;
+    text-align: right;
+    float:left;
+    padding-right: 10px;
+  }
+  .span-priorities {
+    width: 45px;
+    float:left;
+    margin-right: 0px;
+  }
+  .span-blank-state {
+    text-align: center;
+    padding: 22px 0;
+  }
+
+  .rec-area {
+    border-top: none;
+    border-right: 1px solid @border-color;
+    border-bottom: 1px solid @border-color;
+    border-left: 1px solid @border-color;
+  }
+  .rec-untitled{
+    color: lighten(@custom-color-1, 40%);
+  }
+}
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+@media (max-width: @screen-xs-max) {
+  .rec-content{
+    .rec-row{
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .rec-content{
+    .rec-row{
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      min-height: @rec-row-height;
+      margin-bottom: 0;
+      .span-cost{
+        .input-group-addon{
+          min-width: 20px;
+        }
+      }
+      .span-sir, .span-savings{
+        padding-top: 21px;
+      }
+      .btn-go{
+        border-top-right-radius: 0;
+      }
+    }
+    .span-accept {
+      .btn{
+        padding: 8px 4px;
+        font-size: 0.85em;
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .rec-content{
+    .span-accept {
+      .btn{
+        padding: 6px 9px;
+        font-size: 1em;
+      }
+    }
+    .span-cost{
+      width: 30%;
+      margin-right: 15%;
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

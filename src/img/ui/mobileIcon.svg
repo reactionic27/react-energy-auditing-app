@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>mobileIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-31.000000, -93.000000)">
+            <g id="mobileIcon" transform="translate(48.000000, 93.000000)">
+                <rect id="Rectangle-36" fill="#DBAD6E" x="0" y="0" width="40" height="72" rx="3"></rect>
+                <rect id="Rectangle-37" fill="#FDD488" x="2" y="6" width="36" height="56"></rect>
+                <polygon id="Triangle-2" fill="#FEE2A7" points="2 6 38 6 2 62"></polygon>
+                <circle id="Oval-6" fill="#FDD488" cx="20" cy="67" r="3"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

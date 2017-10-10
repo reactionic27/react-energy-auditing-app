@@ -1,0 +1,447 @@
+/* =================================================================================  */
+/* ======  Start custom Snugg Code - Do not overwrite with default budicon code ====  */
+
+@charset "UTF-8";
+
+
+/* Font paths are set in server/express-init.js. This is not the true relative path */
+@font-face {
+  font-family: "snugg-4-1";
+  src:url("/font/budicons/snugg-4-1.eot");
+  src:url("/font/budicons/snugg-4-1.eot?#iefix") format("embedded-opentype"),
+    url("/font/budicons/snugg-4-1.woff") format("woff"),
+    url("/font/budicons/snugg-4-1.ttf") format("truetype"),
+    url("/font/budicons/snugg-4-1.svg#snugg-4-1") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.btn [class^="ico-"].ico-spin,
+.nav [class^="ico-"].ico-spin,
+.btn [class*=" ico-"].ico-spin,
+.nav [class*=" ico-"].ico-spin {
+  display: inline-block;
+}
+
+.btn [class^="ico-"].ico-spin.ico-large,
+.btn [class*=" ico-"].ico-spin.ico-large {
+  line-height: .8em;
+}
+
+/* Animated rotating icon */
+.ico-spin {
+  -webkit-transform-origin: 50% 47.5%;
+  transform-origin:50% 47.5%;
+  -ms-transform-origin:50% 47.5%; /* IE 9 */
+  line-height: 0.4em !important;
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+/* Prevent stack and spinners from being taken inline when inside a link */
+a .ico-stack,
+a .ico-spin {
+  display: inline-block;
+  text-decoration: none;
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -ms-transform: rotate(0deg);
+  }
+  100% {
+    -ms-transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Icon rotations and mirroring */
+.ico-rotate-90:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.ico-rotate-180:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.ico-rotate-270:before {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.ico-flip-horizontal:before {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.ico-flip-vertical:before {
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+/* ensure rotation occurs inside anchor tags */
+a .ico-rotate-90:before,
+a .ico-rotate-180:before,
+a .ico-rotate-270:before,
+a .ico-flip-horizontal:before,
+a .ico-flip-vertical:before {
+  display: inline-block;
+}
+
+[data-icon]:before {
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  visibility: hidden;
+
+}
+
+[class^="ico-"]:before,
+[class*=" ico-"]:before {
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  visibility: hidden;
+}
+
+[data-icon]:before {
+    font-family: "snugg-4-1" !important;
+    visibility: visible;
+  }
+
+[class^="ico-"]:before,
+[class*=" ico-"]:before {
+    font-family: "snugg-4-1" !important;
+    visibility: visible;
+
+}
+
+
+
+
+/* ======  End custom Snugg Code - Do not overwrite above this line with default budicon code ====  */
+/* ===============================================================================================  */
+
+.ico-budicon:before {
+  content: "\61";
+}
+.ico-budicon-1:before {
+  content: "\62";
+}
+.ico-budicon-2:before {
+  content: "\63";
+}
+.ico-budicon-3:before {
+  content: "\64";
+}
+.ico-budicon-4:before {
+  content: "\65";
+}
+.ico-budicon-5:before {
+  content: "\66";
+}
+.ico-budicon-6:before {
+  content: "\67";
+}
+.ico-budicon-7:before {
+  content: "\68";
+}
+.ico-budicon-8:before {
+  content: "\69";
+}
+.ico-budicon-9:before {
+  content: "\6a";
+}
+.ico-budicon-10:before {
+  content: "\6b";
+}
+.ico-budicon-11:before {
+  content: "\6c";
+}
+.ico-budicon-12:before {
+  content: "\6d";
+}
+.ico-budicon-13:before {
+  content: "\6e";
+}
+.ico-budicon-14:before {
+  content: "\6f";
+}
+.ico-budicon-16:before {
+  content: "\71";
+}
+.ico-budicon-17:before {
+  content: "\72";
+}
+.ico-budicon-18:before {
+  content: "\73";
+}
+.ico-budicon-19:before {
+  content: "\74";
+}
+.ico-budicon-20:before {
+  content: "\75";
+}
+.ico-budicon-21:before {
+  content: "\76";
+}
+.ico-budicon-22:before {
+  content: "\77";
+}
+.ico-budicon-23:before {
+  content: "\78";
+}
+.ico-budicon-24:before {
+  content: "\79";
+}
+.ico-budicon-25:before {
+  content: "\7a";
+}
+.ico-budicon-26:before {
+  content: "\41";
+}
+.ico-budicon-27:before {
+  content: "\42";
+}
+.ico-budicon-28:before {
+  content: "\43";
+}
+.ico-budicon-29:before {
+  content: "\44";
+}
+.ico-budicon-30:before {
+  content: "\45";
+}
+.ico-budicon-31:before {
+  content: "\46";
+}
+.ico-budicon-32:before {
+  content: "\47";
+}
+.ico-budicon-33:before {
+  content: "\48";
+}
+.ico-budicon-34:before {
+  content: "\49";
+}
+.ico-budicon-35:before {
+  content: "\4a";
+}
+.ico-budicon-36:before {
+  content: "\4b";
+}
+.ico-budicon-37:before {
+  content: "\4c";
+}
+.ico-budicon-38:before {
+  content: "\4d";
+}
+.ico-budicon-39:before {
+  content: "\4e";
+}
+.ico-budicon-40:before {
+  content: "\4f";
+}
+.ico-budicon-41:before {
+  content: "\50";
+}
+.ico-budicon-42:before {
+  content: "\51";
+}
+.ico-budicon-43:before {
+  content: "\52";
+}
+.ico-budicon-44:before {
+  content: "\53";
+}
+.ico-budicon-45:before {
+  content: "\54";
+}
+.ico-budicon-47:before {
+  content: "\56";
+}
+.ico-budicon-49:before {
+  content: "\58";
+}
+.ico-budicon-46:before {
+  content: "\55";
+}
+.ico-budicon-48:before {
+  content: "\57";
+}
+.ico-budicon-15:before {
+  content: "\70";
+}
+.ico-budicon-50:before {
+  content: "\59";
+}
+.ico-budicon-52:before {
+  content: "\30";
+}
+.ico-budicon-51:before {
+  content: "\5a";
+}
+.ico-budicon-53:before {
+  content: "\31";
+}
+.ico-budicon-54:before {
+  content: "\32";
+}
+.ico-budicon-56:before {
+  content: "\34";
+}
+.ico-budicon-55:before {
+  content: "\33";
+}
+.ico-budicon-57:before {
+  content: "\35";
+}
+.ico-budicon-58:before {
+  content: "\36";
+}
+.ico-budicon-59:before {
+  content: "\37";
+}
+.ico-budicon-60:before {
+  content: "\38";
+}
+.ico-budicon-61:before {
+  content: "\39";
+}
+.ico-budicon-62:before {
+  content: "\21";
+}
+.ico-budicon-63:before {
+  content: "\22";
+}
+.ico-budicon-64:before {
+  content: "\23";
+}
+.ico-budicon-65:before {
+  content: "\24";
+}
+.ico-budicon-66:before {
+  content: "\25";
+}
+.ico-budicon-67:before {
+  content: "\26";
+}
+.ico-budicon-68:before {
+  content: "\27";
+}
+.ico-budicon-69:before {
+  content: "\28";
+}
+.ico-budicon-70:before {
+  content: "\29";
+}
+.ico-list-number:before {
+  content: "\2a";
+}
+.ico-list-bullet:before {
+  content: "\2b";
+}
+.ico-budicon-71:before {
+  content: "\2c";
+}
+.ico-budicon-72:before {
+  content: "\2d";
+}
+.ico-budicon-73:before {
+  content: "\2e";
+}
+.ico-budicon-74:before {
+  content: "\2f";
+}
+.ico-budicon-75:before {
+  content: "\3a";
+}
+.ico-budicon-76:before {
+  content: "\3b";
+}
+.ico-budicon-77:before {
+  content: "\3c";
+}
+.ico-budicon-78:before {
+  content: "\3d";
+}
+.ico-budicon-79:before {
+  content: "\3e";
+}
+.ico-budicon-80:before {
+  content: "\3f";
+}
+.ico-budicon-81:before {
+  content: "\40";
+}
+.ico-ios-snowy:before {
+  content: "\5b";
+}
+.ico-budicon-82:before {
+  content: "\5d";
+}
+.ico-budicon-83:before {
+  content: "\5e";
+}
+.ico-load-d:before {
+  content: "\5f";
+}

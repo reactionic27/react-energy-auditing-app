@@ -1,0 +1,91 @@
+// =========== Snugg Mixins =================
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+//  ========= Theme gradient ================
+.theme-colors(@color-1,  @color-2){
+  background: @color-1; /* Old browsers */
+  background: -moz-linear-gradient(left,  @color-1 0%, @color-1 50%, @color-2 50%, @color-2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,@color-1), color-stop(50%,@color-1), color-stop(50%,@color-2), color-stop(100%,@color-2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, @color-1 0%,@color-1 50%,@color-2 50%,@color-2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, @color-1 0%,@color-1 50%,@color-2 50%,@color-2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, @color-1 0%,@color-1 50%,@color-2 50%,@color-2 100%); /* IE10+ */
+  background: linear-gradient(to right, @color-1 0%,@color-1 50%,@color-2 50%,@color-2 100%); /* W3C */
+}
+
+// =========  deprecated mixins in BS 3 that are useful
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+
+// Watermark to display on sample jobs
+.sample-job-watermark {
+  &:after {
+    content: "Sample";
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    font-size: 180px;
+    text-transform: uppercase;
+    font-family: 'open sans', 'helvetica neue', helvetica, arial;
+    -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    color: rgba(0,0,0,0.24);
+  }
+}
+
+.desaturate-image {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.transform(@method){
+  transform: @method;
+  -webkit-transform: @method; /** Chrome & Safari **/
+  -o-transform: @method; /** Opera **/
+  -moz-transform: @method; /** Firefox **/
+}
+
+.animate-hide(){
+  -webkit-animation: fadeOut 0.2s ease-in forwards, shrinkHeight 0.5s ease-in forwards;
+  animation: fadeOut 0.2s ease-in forwards, shrinkHeight 0.5s ease-in forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  to{
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  to{
+    opacity: 0;
+  }
+}
+@-webkit-keyframes shrinkHeight {
+  to {
+    max-height: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes shrinkHeight {
+  to {
+    max-height: 0;
+    transform: scale(0);
+  }
+}

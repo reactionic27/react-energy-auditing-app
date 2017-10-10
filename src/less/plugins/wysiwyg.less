@@ -1,0 +1,59 @@
+// ====================  Style WYSIWYG ======================
+.wysiwyg{
+  .editor{
+    &.blank-editor:before{
+      display: block;
+      content: "Click to add text";
+      color: @gray-light;
+
+    }
+    border: 1px solid transparent;
+    height: 100%;
+    overflow: hidden;
+    &:focus{
+      border: 1px solid @gray-light;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: none;
+    }
+    &:hover{
+      background-color: lighten(@custom-color-2, 15%);
+    }
+    &:hover:focus{
+      background-color: inherit;
+    }
+  }
+  .toolbar{
+    width: 360px;
+    .btn{
+      float:left;
+      font-size: 18px;
+      width: 45px;
+      height: 45px;
+      border-radius: 0;
+      text-align: center;
+      box-shadow: 0 -1px 1px rgba(0,0,0,0.5);
+      &:active:focus{
+        outline: none;
+      }
+      &:first-child{
+        border-top-left-radius: 5px;
+      }
+      &:last-child{
+        border-top-right-radius: 5px;
+      }
+      [class*=" icon-"], [class^="icon-"]{
+        font-size: 15px;
+      }
+      &.active{
+        background-color: darken(@gray-lighter, 12%);
+      }
+    }
+    .btn-bold{
+      font-weight: 700;
+    }
+    .btn-italic{
+      font-style: italic;
+    }
+  }
+}

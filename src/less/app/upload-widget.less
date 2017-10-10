@@ -1,0 +1,104 @@
+.uploadcare-container{
+  position: relative;
+  height: 115px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: @gray-lighter;
+  border-radius: 3px;
+  cursor: pointer;
+  .box-shadow(inset 0px 1px 3px rgba(0,0,0,0.2));
+  .btn.delete-photo{
+    .button-variant(red, #fff, #ccc);
+    border: 1px solid #ddd;
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    margin: auto;
+    width: 45px;
+    font-size: 18px;
+  }
+  .delete-photo{
+    display:none;
+  }
+  img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    height:auto;
+    width:auto;
+    min-height:50px;
+    min-width: 50px;
+    cursor:pointer;
+    border: 1px solid rgba(0,0,0,0.2);
+  }
+  .uploadcare-widget {
+    width: 100%;
+    // The buttons...
+    .uploadcare-widget-button {
+      display: none !important;
+    }
+
+    // The upload circle
+    .uploadcare-widget-status,
+    .uploadcare-widget-circle-back {
+      display: none;
+    }
+
+    // Same as above but for the foreground progress pie. In contrast with most other classes, the style for this one is applied only once, at the time of widget progress circle creation.
+    .uploadcare-widget-circle-active  {
+
+    }
+
+    // All widget messages. You can change the font, text size, or color, for example.
+    .uploadcare-widget-status-text {
+      display: none;
+    }
+    // Drag and drop area styling...
+    .uploadcare-widget-dragndrop-area {
+      margin-top: 0;
+      display: block;
+      cursor: pointer;
+      position: relative;
+      min-height: 115px;
+      border-radius: 5px;
+      min-width: initial;
+      left: 0;
+      &:hover{
+        background-color: desaturate(lighten(@brand-info, 35%), 35%);
+        border-color: lighten(@brand-info, 10%);
+      }
+      &:active, &:focus{
+        background-color: desaturate(lighten(@brand-info, 30%), 15%);
+        border-color: @brand-info;
+      }
+      .snugg-upload-prompt-text {
+        line-height: 28px;
+        padding: 15px 0;
+        display: block;
+        margin: auto;
+        font-size: 10px;
+        i[class^="ico-"], i[class*=" ico-"]{
+          font-size: 36px;
+        }
+      }
+    }
+  }
+  .uploadcare-dragging {
+    background-color: #f8f9d9;
+  }
+}
+.uploadcare-dialog-footer {
+  display: none
+}
+
+.uploadcare-file-container {
+  .uploadcare-widget {
+    display: none !important;
+  }
+}

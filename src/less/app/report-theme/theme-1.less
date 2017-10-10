@@ -1,0 +1,19 @@
+// #####################################################
+// ##############     CLASSIC GREEN        ##############
+// #####################################################
+
+//- ================ REPORT VARIABLES =================
+
+@theme-1-color-1: #DAE8CC;
+@theme-1-color-2: darken(@theme-1-color-1, 62%);
+
+
+.theme-swatch-1{
+  .theme-colors(@theme-1-color-1, @theme-1-color-2);
+}
+.theme-1 {
+  @color-1: @theme-1-color-1;
+  @color-2: @theme-1-color-2;
+  // Specify @color-3 if necessary
+  .theme(@color-1, @color-2, @color-3);
+}

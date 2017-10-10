@@ -1,0 +1,2 @@
+build/index.js -diff
+build/app.css -diff

@@ -1,0 +1,133 @@
+.rec-single{
+  .span-rec-name{
+    .form-group{
+      margin-bottom: 0;
+    }
+  }
+  .span-accept{
+    .btn{
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  .btn-up, .btn-down{
+    border-radius: 0;
+    border-right: none;
+    background-image: none;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+    padding: 6px 9px;
+    &:focus{
+      background-color: @custom-color-3;
+    }
+    &:active{
+      background-color: darken(@custom-color-3, 16%);
+
+    }
+  }
+  .btn-down{
+    border-top: 1px solid darken(@custom-color-3, 4%);
+  }
+  .rec-blank-state{
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 2px;
+  }
+  .span-value{
+    padding-top: 7px;
+  }
+
+  /* Photo row styling*/
+  .photo-row-container{
+    padding-bottom: 20px;
+  }
+  .photo-row{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    transition: outline 0.2s ease;
+    position: relative;
+    border-bottom: 1px dashed #ccc;
+    // Animation
+    max-height: 1000px;
+    overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+    &.photo-row-deleting{
+      .animate-hide();
+    }
+    &:first-child{
+      .span-priorities{
+        .btn-up{
+          opacity: 0.5;
+          cursor: not-allowed;
+          &:hover{
+            background-color: @custom-color-3;
+          }
+        }
+      }
+    }
+    &:last-child{
+      .span-priorities{
+        .btn-down{
+          opacity: 0.5;
+          cursor: not-allowed;
+          &:hover{
+            background-color: @custom-color-3;
+          }
+        }
+      }
+    }
+
+    h4{
+      padding: 4px 0;
+    }
+    &.highlight-delete{
+      // border: 1px dashed red;
+      background-color: #F1E3E3;
+
+      // background-color: red;
+    }
+    .photo-caption{
+      height: 115px;
+    }
+    .uploadcare-container {
+      .uploadcare-widget-circle--canvas {
+        display:none;
+      }
+    }
+  }
+  textarea.form-control{
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    &:hover {
+      background-color: lighten(@custom-color-2, 22%);
+      &:active, &:focus {
+        background-color: transparent;
+      }
+    };
+  }
+}
+
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+@media (max-width: @screen-xs-max) {
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}

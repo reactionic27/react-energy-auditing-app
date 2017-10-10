@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>refineIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="8" height="64" rx="4"></rect>
+        <rect id="path-3" x="0" y="0" width="8" height="64" rx="4"></rect>
+        <rect id="path-5" x="0" y="0" width="8" height="64" rx="4"></rect>
+        <circle id="path-7" cx="10" cy="45" r="10"></circle>
+        <circle id="path-8" cx="32" cy="19" r="10"></circle>
+        <circle id="path-9" cx="54" cy="45" r="10"></circle>
+    </defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-178.000000, -447.000000)">
+            <g id="Group-22" transform="translate(183.000000, 451.000000)">
+                <g id="Oval-7" transform="translate(6.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FEE2A7" xlink:href="#path-1"></use>
+                    <circle fill="#FDD488" mask="url(#mask-2)" cx="4" cy="45" r="15"></circle>
+                </g>
+                <g id="Oval-7" transform="translate(50.000000, 0.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Mask" fill="#FEE2A7" xlink:href="#path-3"></use>
+                    <circle fill="#FDD488" mask="url(#mask-4)" cx="4" cy="45" r="15"></circle>
+                </g>
+                <g id="Oval-7" transform="translate(32.000000, 32.000000) scale(-1, -1) translate(-32.000000, -32.000000) translate(28.000000, 0.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Mask" fill="#FEE2A7" xlink:href="#path-5"></use>
+                    <circle fill="#FDD488" mask="url(#mask-6)" cx="4" cy="45" r="15"></circle>
+                </g>
+                <g id="Oval-7">
+                    <use fill="#FDD488" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    <circle stroke="#E8B773" stroke-width="6" cx="10" cy="45" r="7"></circle>
+                </g>
+                <g id="Oval-7">
+                    <use fill="#FDD488" fill-rule="evenodd" xlink:href="#path-8"></use>
+                    <circle stroke="#E8B773" stroke-width="6" cx="32" cy="19" r="7"></circle>
+                </g>
+                <g id="Oval-7">
+                    <use fill="#FDD488" fill-rule="evenodd" xlink:href="#path-9"></use>
+                    <circle stroke="#E8B773" stroke-width="6" cx="54" cy="45" r="7"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

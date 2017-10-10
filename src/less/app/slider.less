@@ -1,0 +1,42 @@
+@slider-border-radius: 10px;
+@chart-color-1: #872C4F;
+@chart-color-2: #EF8A45;
+@chart-color-3: #F2CD50;
+.horizontal-slider {
+  margin-bottom: 20px;
+  .handle{
+    background-color: @custom-color-1;
+    z-index: 101;
+    margin-top: 8px;
+    margin-left: -20px;
+    border-color: fade(@custom-color-1, 60%);
+  }
+  div.bar:last-of-type{
+    border-radius: 0 @slider-border-radius  @slider-border-radius 0;
+
+  }
+  .bar {
+    height: 20px;
+    text-align: center;
+    color: transparent !important;
+    -webkit-user-select: none;
+    &:first-child{
+      border-radius: @slider-border-radius 0 0 @slider-border-radius;
+    }
+    &.bar-0{
+      background-color: @chart-color-1;
+      color: #fff;
+    }
+    &.bar-1{
+      background-color: @chart-color-2;
+      // color: #000;
+    }
+    &.bar-2{
+      background-color: @chart-color-3;
+      // color: #000;
+    }
+    .bar-value{
+      text-align: center;
+    }
+  }
+}

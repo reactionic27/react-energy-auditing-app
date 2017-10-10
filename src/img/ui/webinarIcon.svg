@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>webinarIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="34" cy="26" r="12"></circle>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.992156863   0 0 0 0 0.831372549   0 0 0 0 0.533333333  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-608.000000, -93.000000)">
+            <g id="webinarIcon" transform="translate(610.000000, 99.000000)">
+                <g id="Group-4" transform="translate(16.000000, 46.000000)" stroke="#D1BC9D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2.4047619,0.409090909 L35.5952381,17.5909091" id="Line"></path>
+                    <path d="M0.404761905,0.409090909 L33.5952381,17.5909091" id="Line" transform="translate(17.000000, 9.000000) scale(-1, 1) translate(-17.000000, -9.000000) "></path>
+                </g>
+                <path d="M4,4 L64,4 L64,45.9950767 C64,47.1023652 63.1052696,48 62.0036926,48 L5.99630737,48 C4.89377725,48 4,47.1011449 4,45.9950767 L4,4 Z" id="Rectangle-18-Copy" fill="#FEE2A7"></path>
+                <g id="Oval">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle-4" fill="#E8B773" x="0" y="0" width="68" height="4" rx="2"></rect>
+                <rect id="Rectangle-6" fill="#FDD488" x="4" y="4" width="60" height="5"></rect>
+                <polygon id="Triangle" fill="#E8B773" points="31 21 39 26 31 31"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

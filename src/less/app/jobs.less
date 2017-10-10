@@ -1,0 +1,297 @@
+// --------------------------  Jobs and templates Modules --------------------
+.jobs-view{
+  h1{
+    font-weight: 600;
+    font-size:16px;
+    line-height: 19px;
+    .btn-group{
+      margin-left: 10px;
+      > .btn-large{
+        font-size: 24px;
+      }
+    }
+  }
+  h2{
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 5px;
+  }
+}
+.listings{
+  color: @custom-color-1;
+  margin-bottom: 40px;
+  // font-size: 12px;
+  // line-height: 20px;
+
+  h3{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: @custom-color-1;
+    margin:0;
+    max-width: 100%;// 248px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: @gray-dark;
+    small{
+      color: #666;
+    }
+  }
+  a{
+    color: @gray-dark;
+  }
+  .jl{
+    font-size: 12px;
+    line-height: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+
+    .clearfix();
+    &:nth-child(even){
+    }
+    &.jl-unread{
+      background-color: lighten(@custom-color-3, 0.2);
+      h3{
+        font-weight: 700;
+        padding-right: 20px;
+        &:after{
+          content: "\3e";
+          font-family: "snugg-4-1";
+          position: absolute;
+          display:block;
+          height:20px;
+          right:10px;
+          top:8px;
+          padding-left: 5px;
+          margin:auto;
+          font-size: inherit;
+          color: rgba(0,0,0,0.5)
+        }
+      }
+    }
+    &.jl-single-line{
+      .jl-everything-else{
+        padding-top: 13px;
+      }
+    }
+    &.jl-single-button{
+      .jl-buttons{
+        width: 36px;
+      }
+      .jl-everything-else{
+        margin-left: 35px;
+        padding-left: 5px;
+      }
+    }
+    &.jl-no-button{
+      .jl-everything-else{
+        margin-left: 0;
+      }
+    }
+  }
+  .jl-buttons{
+    width: 72px;
+    min-height: 46px;
+    float: left;
+  }
+  .jl-everything-else{
+    cursor: pointer;
+    min-height: 46px;
+    margin-left: 72px;
+    &:hover{
+      background-color: lighten(@custom-color-2, 20%);
+    }
+    &:active{
+      background-color: lighten(@custom-color-2, 15%);
+    }
+  }
+
+  // Standard box within a job listing.
+
+  .jl-box{
+    padding-top: 15px;
+    padding: 15px 1.5% 3px;
+    float:left;
+    color: @gray;
+    text-align: center;
+    position: relative;
+    overflow-x:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .jl-job-id{
+    width: 25%;
+  }
+  .jl-account{
+    .clearfix();
+    padding: 6px 5px 0 4px;
+  }
+  .jl-discreet{
+    color: @gray;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  .btn-map-it{
+    position: relative;
+    padding: 0;
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 0;
+    height: 46px;
+    width: 36px;
+    color: rgba(0,0,0,0.3);
+    background-color: transparent;
+    cursor: pointer;
+    &:hover{
+      background-color: lighten(@custom-color-2, 20%);
+      color: @custom-color-1
+    }
+    [class^="ico-"], [class*=" ico-"]{
+      height: 22px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .jl-user{
+    width: 20%;
+  }
+  .jl-program{
+    width: 30%
+  }
+  .jl-stage{
+    width: 20%
+  }
+  .jl-date-and-time{
+    float: right;
+    padding: 5px 5px 0 0;
+    .cal-icon{
+      text-align: center;
+      min-width: 70px;
+      min-height: 57px;
+      .cal-icon__month{
+        font-size:11px;
+        font-weight: 400;
+      }
+      .cal-icon__month-day{
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 1.2em;
+      }
+      .cal-icon__week-day-and-time{
+        font-size: 11px;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+    }
+  }
+  .jl-date{
+    float: left;
+    text-align: left;
+    padding-left: 0;
+  }
+  .jl-time{
+    float: right;
+    text-align: right;
+    padding-right: 0;
+  }
+}
+
+// ====================  RESPONSIVE TWEAKS ======================
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* ONLY extra small devices (phones less than 768px) */
+@media (max-width: @screen-xs-max) {
+  .content-header{
+    // .content-header-xs{
+    //   background: darken(@custom-color-3, 4%);
+    //   border-bottom: solid 1px darken(@custom-color-3, 7%);
+    // }
+  }
+  .listings{
+    .jl{
+      margin-left: -10px;
+      margin-right: -15px;
+      &.jl-unread{
+        h3{
+          padding-right: 35px;
+          &:after{
+            top: 10px;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .jl-date-and-time{
+      float:right;
+      color: @gray;
+      .jl-box-left{
+        display: none;
+      }
+    }
+    .jl-select, .btn-map-it, .jl-everything-else{
+      min-height: 74px;
+    }
+    .jl-account{
+      height: auto;
+      padding: 8px 0 0 3px;
+      h3{
+        max-width: none;
+        margin-top: 0;
+        padding: 2px 0;
+      }
+    }
+    .jl-address{
+    }
+    .jl-job-id, .jl-program, .jl-user{
+      display: inline;
+      width: auto;
+    }
+    .jl-job-stats{
+      color: @gray-light;
+      padding-top: 2px;
+      .jl-box{
+        width: auto;
+        padding: 0;
+        padding-left: 3px;
+        &:first-child{
+          &:after{
+            content: " \2022  ";
+          }
+        }
+
+
+      }
+    }
+    .jl-box{
+      padding: 3px;
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .jobs-view{
+    .jl-date{
+      padding-left: 10%;
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="72px" viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>pricingPlanIcon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="help-pattern-blocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-166.000000, -93.000000)">
+            <g id="pricingPlanIcon" transform="translate(168.000000, 101.000000)">
+                <g id="Group-6">
+                    <path d="M28,32 L28,58 L3.91184208,50.5882591 C2.85596085,50.2633726 2,49.1050211 2,48.0029953 L2,24 L28,32 Z" id="Rectangle-18" fill="#EBC186"></path>
+                    <path d="M28,42 L28,32 L2,24 L2,34 L2,28 L28,36 L28,42 Z" id="Combined-Shape" fill="#DBAD6E"></path>
+                    <polygon id="Rectangle-18" fill="#E8B773" transform="translate(41.000000, 41.000000) scale(-1, 1) translate(-41.000000, -41.000000) " points="54 32 54 58 28 50 28 24"></polygon>
+                    <path d="M54,42 L54,32 L28,24 L28,34 L28,28 L54,36 L54,42 Z" id="Combined-Shape" fill="#DBAD6E" transform="translate(41.000000, 33.000000) scale(-1, 1) translate(-41.000000, -33.000000) "></path>
+                    <polygon id="Rectangle-18" fill="#FDD488" points="28 0 56 8 28 16 0 8"></polygon>
+                    <path d="M28,16 L28,32 L1.92455339,24.5498724 C0.861651904,24.2461863 0,23.1054862 0,22.0059397 L0,8 L28,16 Z" id="Rectangle-18" fill="#EBC186"></path>
+                    <path d="M56,16 L56,32 L29.9245534,24.5498724 C28.8616519,24.2461863 28,23.1054862 28,22.0059397 L28,8 L56,16 Z" id="Rectangle-18" fill="#E8B773" transform="translate(42.000000, 20.000000) scale(-1, 1) translate(-42.000000, -20.000000) "></path>
+                </g>
+                <g id="Group-6" transform="translate(40.000000, 35.000000)">
+                    <path d="M14,16 L14,29 L1.95592104,25.2941296 C1.42798043,25.1316863 1,24.5525106 1,24.0014977 L1,12 L14,16 Z" id="Rectangle-18" fill="#FDD488"></path>
+                    <path d="M14,21.5 L14,16 L1,12 L1,17.5 L1,15 L14,19 L14,21.5 Z" id="Combined-Shape" fill="#E8B773"></path>
+                    <path d="M27,16 L27,29 L14.955921,25.2941296 C14.4279804,25.1316863 14,24.5525106 14,24.0014977 L14,12 L27,16 Z" id="Rectangle-18" fill="#EBC186" transform="translate(20.500000, 20.500000) scale(-1, 1) translate(-20.500000, -20.500000) "></path>
+                    <path d="M27,21.5 L27,16 L14,12 L14,17.5 L14,15 L27,19 L27,21.5 Z" id="Combined-Shape" fill="#E8B773" transform="translate(20.500000, 16.750000) scale(-1, 1) translate(-20.500000, -16.750000) "></path>
+                    <polygon id="Rectangle-18" fill="#FEE2A7" points="14 0 28 4 14 8 0 4"></polygon>
+                    <path d="M14,8 L14,16 L0.962276697,12.2749362 C0.430825952,12.1230931 0,11.5469637 0,11.0029699 L0,4 L14,8 Z" id="Rectangle-18" fill="#FDD488"></path>
+                    <path d="M28,8 L28,16 L14.9622767,12.2749362 C14.430826,12.1230931 14,11.5469637 14,11.0029699 L14,4 L28,8 Z" id="Rectangle-18" fill="#EBC186" transform="translate(21.000000, 10.000000) scale(-1, 1) translate(-21.000000, -10.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

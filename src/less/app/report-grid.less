@@ -1,0 +1,77 @@
+@reportGridColumns:     12;
+@reportGridColumnWidth: 62px;
+@reportGridGutterWidth: 18px;
+@reportGridRowWidth:    (@reportGridColumns * @reportGridColumnWidth) + (@reportGridGutterWidth * (@reportGridColumns - 1));
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.report-grid (@gridColumnWidth, @gridGutterWidth) {
+
+  .r-spaX (@index) when (@index > 0) {
+    .r-spa@{index} { .r-spa(@index); }
+    .r-spaX(@index - 1);
+  }
+  .r-spaX (0) {}
+
+  .r-offsetX (@index) when (@index > 0) {
+    .r-offset@{index} { .r-offset(@index); }
+    .r-offsetX(@index - 1);
+  }
+  .r-offsetX (0) {}
+
+  .r-offset (@columns) {
+    margin-left: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1));
+  }
+
+  .r-spa (@columns) {
+    width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+  }
+
+  .r-row {
+    margin-left: @gridGutterWidth * -1;
+    .clearfix();
+  }
+
+  [class*="r-spa"] {
+    float: left;
+    min-height: 5px; // prevent collapsing columns
+    margin-left: @gridGutterWidth;
+  }
+
+  // Set the container width, and override it for fixed navbars in media queries
+  .r-container,
+  .r-navbar-static-top .container,
+  .r-navbar-fixed-top .container,
+  .r-navbar-fixed-bottom .container { .r-spa(@reportGridColumns); }
+
+  // generate .r-spaX and .r-offsetX
+  .r-spaX (@reportGridColumns);
+  .r-offsetX (@reportGridColumns);
+}
+
+.report-grid(@reportGridColumnWidth, @reportGridGutterWidth);
+
+// Reset utility classes due to specificity
+[class*="r-spa"].hide,
+.row-fluid [class*="r-spa"].hide {
+  display: none;
+}
+
+[class*="r-spa"].pull-right,
+.row-fluid [class*="r-spa"].pull-right {
+  float: right;
+}
+
